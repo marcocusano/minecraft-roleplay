@@ -8,7 +8,7 @@ This Repo was made to self-host a working end-user project. If you find a bug fr
 **That's a free project and you're free to use as free to leave! Don't you think so?**
 
 ## Requirements
-- MySQL (v5.7+)
+- MySQL (v5.2+)
 - NPM (v9.7.2+)
 - Node.js (v18.16.0+)
 - Java (17+)
