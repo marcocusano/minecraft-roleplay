@@ -27,8 +27,8 @@ You can even check the `ubuntu` branch to get your pre-configured Ubuntu Server,
 
 ## Technical Details
 - [Database Structure](https://github.com/marcocusano/minecraft-roleplay/wiki/Database-Structure)
-- [Roleplay Engine](https://github.com/marcocusano/minecraft-roleplay/wiki/Minecraft-Plugin) (Minecraft Plugin)
-- [Roleplay Management System (R.M.S.)](https://github.com/marcocusano/minecraft-roleplay/wiki/Web-Application) (Web Application)
+- [Roleplay Engine](https://github.com/marcocusano/minecraft-roleplay/wiki/Minecraft-Engine) (Minecraft Plugin)
+- [Roleplay Management System (R.M.S.)](https://github.com/marcocusano/minecraft-roleplay/wiki/Roleplay-Management-System) (Web Application)
 
 ## FAQ
 
