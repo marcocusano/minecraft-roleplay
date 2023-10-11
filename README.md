@@ -13,9 +13,10 @@ This Repo was made to self-host a working end-user project. If you find a bug fr
 **That's a free project and you're free to use as free to leave! Don't you think so?**
 
 ## Requirements
-- MySQL (v5.2+)
-- NPM (v9.7.2+)
-- Node.js (v18.16.0+)
+- MySQL (5.2+)
+- NPM (9.7+)
+- Node.js (18.14+)
+- PHP (8.2+)
 - Java (17+)
 
 ## Server Setup
@@ -34,7 +35,7 @@ You can even check the `ubuntu` branch to get your pre-configured Ubuntu Server,
 
 **Which server should I buy?**
 > Of course, it depends on your Project budget and aspectative. How many players are you looking to have? Are you looking for self-hosted solution (like a VPS or a Dedicated) or a pre-made solution?
-I'm not going to talk about pre-made solutions but self-hosted solutions. So, if you've a little budget you actually need a [Single-Server Configuration](#). Instead, if you've an higher budget or a Team you can try the [Multi-Server Configuration](#).
+I'm not going to talk about pre-made solutions but self-hosted solutions. So, if you've a little budget you actually need a [Single-Server Configuration](#). Instead, if you've an higher budget you can try the [Multi-Server Configuration](#).
 
 
 **Which Minecraft Server engine should I use?**
