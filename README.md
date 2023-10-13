@@ -1,28 +1,34 @@
-**WARNING!!! THE CURRENT GUIDE IS ACTUALLY JUST A DOCUMENTATION AND I SHARED TECHNICAL INFORMATIONS ONLY SUCH AS [DATABASE STRUCTURE](https://github.com/marcocusano/minecraft-roleplay/wiki/Database-Structure). THE MINECRAFT PLUGIN (Roleplay Engine) AND THE VUE.JS WEB APPLICATION (Roleplay Management System) ARE STILL UNDER DEVELOPMENT. YOU MAY CLONE THIS REPO WHEN THIS MESSAGE WILL BE REMOVED AND WHEN YOU SEE A VERSION ON TOP OF THIS README FILE!**
+### **WARNING!!! THE CURRENT GUIDE IS ACTUALLY JUST A WORKING PROGRESS DOCUMENTATION AND I SHARED TECHNICAL INFORMATIONS ONLY, SUCH AS [DATABASE STRUCTURE](https://github.com/marcocusano/minecraft-roleplay/wiki/Database-Structure). THE MINECRAFT PLUGIN ([Roleplay Engine](https://github.com/marcocusano/minecraft-roleplay/wiki/Roleplay-Engine)) AND THE VUE.JS WEB APPLICATION ([Roleplay Management System](https://github.com/marcocusano/minecraft-roleplay/wiki/Roleplay-Management-System) ARE STILL UNDER DEVELOPMENT AS DESCRIBED BY THE FOLLOWING PHASES:**
+- **Phase 1 (Current)** - [Pilot](https://github.com/marcocusano/pilot) and [Vue-Pilot](https://github.com/marcocusano/vue-pilot): A Slim PHP Framework and a Vue.js library to manage the Web Application;
+- **Phase 2** - Layout: All web applications static pages, with static example datas;
+- **Phase 3** - GodMode: A working web application with a god powers! (No login / No permissions);
+- **Phase 4** - Web Release: The first working release of the web application;
+- **Phase 5** - Goto Minecraft: An alpha version of the Minecraft plugin;
 
-**IN THE MEANWHILE, HERE IS A PREVIEW SCREEN OF THE VUE.JS APPLICATION! IT WILL CHANGE DURING THE DEVELOPMENT, SO STAY TUNED!!!**
+**YOU MAY CLONE THIS REPO WHEN THIS MESSAGE WILL BE REMOVED AND WHEN YOU SEE A VERSION ON TOP OF THIS README FILE!**
+
+**IN THE MEANWHILE, HERE IS A PREVIEW SCREEN OF THE VUE.JS LOG-IN SCREEN! IT WILL CHANGE DURING THE DEVELOPMENT, SO STAY TUNED!!!**
 ![Minecraft Roleplay Management System](https://github.com/marcocusano/minecraft-roleplay/blob/main/assets/screen-login.png)
 
 # Minecraft Roleplay
 The definitive guide to host and code your own Minecraft Roleplay Server!
-Follow this guide to start a new self-configured Minecraft Server and a self-hosted Web Application.
-Please do not edit the code if you're not prepared to debug it by yourself.
-This Repo was made to self-host a working end-user project. If you find a bug from an existing feature you're free to open a pull request or contact me at [report@marcocusano.dev](mailto:report@marcocusano.dev)
+Follow this guide to start a new pre-configured Minecraft Server and Web Application.
+This Repo was made to self-host a working end-user project. If you find a bug from an existing feature you're free to open a pull request.
 
 **Do not ask for support if you edit the code of your own, breaking everything cuz you're a PiZzA ChatGPTer**.\
 **That's a free project and you're free to use as free to leave! Don't you think so?**
 
 ## Requirements
+- Java (17+)
 - MySQL (5.2+)
 - NPM (9.7+)
 - Node.js (18.14+)
 - PHP (8.2+)
-- Java (17+)
 
 ## Server Setup
 The following guides include a Web Server installation and a Minecraft Server pre-configuration:
 - [Localhost](https://github.com/marcocusano/minecraft-roleplay/wiki/Localhost-Installation) (Windows + Docker + ZeroTier + Paper)\
-You can even check the `localhost` branch to get your pre-configured Docker localhost.
+You can even check the `localhost` branch to get your pre-configured Docker and Paper localhost.
 - [VPS or a Dedicated Server](https://github.com/marcocusano/minecraft-roleplay/wiki/Ubuntu-Installation) (Ubuntu + Paper + _(optional) Velocity_)\
 You can even check the `ubuntu` branch to get your pre-configured Ubuntu Server, then run `install-single.sh` for a single-server configuration or `install-multi.sh`
 
@@ -34,7 +40,7 @@ You can even check the `ubuntu` branch to get your pre-configured Ubuntu Server,
 ## FAQ
 
 **Which server should I buy?**
-> Of course, it depends on your Project budget and aspectative. How many players are you looking to have? Are you looking for self-hosted solution (like a VPS or a Dedicated) or a pre-made solution?
+> Of course, it depends on your Project budget and aspectative. How many players are you looking to have? Are you looking for a self-hosted solution (like a VPS or a Dedicated) or a pre-made solution?
 I'm not going to talk about pre-made solutions but self-hosted solutions. So, if you've a little budget you actually need a [Single-Server Configuration](#). Instead, if you've an higher budget you can try the [Multi-Server Configuration](#).
 
 
