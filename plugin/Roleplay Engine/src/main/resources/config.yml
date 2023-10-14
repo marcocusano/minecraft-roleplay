@@ -234,6 +234,7 @@ roleplay:
       material: minecraft:book
       list:
         basic:
+          custom_model_data: 1
           applications:
             messenger: true
             phone: true
@@ -242,6 +243,7 @@ roleplay:
           games: false
           fingerprints: 0 # Amount of fingerprints to secure your phone
         standard:
+          custom_model_data: 2
           applications:
             messenger: true
             phone: true
@@ -252,6 +254,7 @@ roleplay:
               - "stairs"
           fingerprints: 1
         advanced:
+          custom_model_data: 3
           applications:
             messenger: true
             phone: true
