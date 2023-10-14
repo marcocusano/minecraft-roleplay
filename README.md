@@ -47,7 +47,7 @@ I'm not going to talk about pre-made solutions but self-hosted solutions. So, if
 
 
 **Which Minecraft Server engine should I use?**
-> Absolutely [PaperMC](https://papermc.io/software/paper) fork of Spigot, fork of Bukkit. Implements both in a balanced and optmized performance. Instead, If you're looking for a multi-server engine (with a Lobby, for example), you may use Paper for your Lobby, Vannilla, etc. and [Velocity](https://papermc.io/software/velocity) as a Proxy mandatory. Also, if you are a Developer you should try to taking a look to a [very-well-documented APIs](https://hub.spigotmc.org/javadocs/bukkit/). Those links may not be updated, but you can even try to use Google!
+> Absolutely [PaperMC](https://papermc.io/software/paper) fork of Spigot, fork of Bukkit. Implements both in a balanced and optmized performance. Instead, If you're looking for a multi-server engine (with a Lobby, for example), you may use Paper for your Lobby, Vannilla, etc. and [Velocity](https://papermc.io/software/velocity) as a Proxy mandatory. Also, if you are a Developer you should try to taking a look to a [very-well-documented APIs](https://jd.papermc.io/paper/1.20/index.html). Those links may not be updated, but you can even try to use Google!
 
 
 **Which Minecraft plugins should I install?**
