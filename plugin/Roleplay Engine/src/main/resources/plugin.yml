@@ -1,0 +1,9 @@
+name: Roleplay Engine
+version: '${version}'
+main: org.marcocusano.RoleplayEngine
+api-version: '1.20'
+load: STARTUP
+depend: [Paper-API]
+authors: [Marco Cusano]
+description: Roleplay Engine
+website: https://www.marcocusano.dev
