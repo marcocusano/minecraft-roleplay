@@ -1,11 +1,11 @@
 ### **WARNING!!! THE CURRENT GUIDE IS ACTUALLY JUST A WORKING PROGRESS DOCUMENTATION AND I SHARED TECHNICAL INFORMATIONS ONLY, SUCH AS [DATABASE STRUCTURE](https://github.com/marcocusano/minecraft-roleplay/wiki/Database-Structure). THE MINECRAFT PLUGIN ([Roleplay Engine](https://github.com/marcocusano/minecraft-roleplay/wiki/Roleplay-Engine)) AND THE VUE.JS WEB APPLICATION ([Roleplay Management System](https://github.com/marcocusano/minecraft-roleplay/wiki/Roleplay-Management-System)) ARE STILL UNDER DEVELOPMENT AS DESCRIBED BY THE FOLLOWING PHASES:**
-- **Phase 1 (Current)** - [Pilot](https://github.com/marcocusano/pilot) and [Vue-Pilot](https://github.com/marcocusano/vue-pilot): A Slim PHP Framework and a Vue.js library to manage the Web Application;
+- **Phase 1 (Current)** - Web Engine: REST Api System based on Laravel & Sanctum;
 - **Phase 2** - Layout: All web applications static pages, with static example datas;
 - **Phase 3** - GodMode: A working web application with a god powers! (No login / No permissions);
 - **Phase 4** - Web Release: The first working release of the web application;
 - **Phase 5** - Goto Minecraft: An alpha version of the Minecraft plugin;
 
-**YOU MAY CLONE THIS REPO WHEN THIS MESSAGE WILL BE REMOVED AND WHEN YOU SEE A VERSION ON TOP OF THIS README FILE!**
+**YOU MAY CLONE THIS REPO WHEN THIS MESSAGE WILL BE REMOVED AND WHEN YOU SEE A VERSION ON TOP OF ME!**
 
 **IN THE MEANWHILE, HERE IS A PREVIEW SCREEN OF THE VUE.JS LOG-IN SCREEN! IT WILL CHANGE DURING THE DEVELOPMENT, SO STAY TUNED!!!**
 ![Minecraft Roleplay Management System](https://github.com/marcocusano/minecraft-roleplay/blob/main/assets/screen-login.png)
@@ -21,7 +21,7 @@ This Repo was made to self-host a working end-user project. If you find a bug fr
 **That's a free project and you're free to use as free to leave! Don't you think so?**
 
 ## Requirements
-- Java (17+)
+- JDK (17+)
 - MySQL (5.2+)
 - NPM (9.7+)
 - Node.js (18.14+)
@@ -32,12 +32,12 @@ The following guides include a Web Server installation and a Minecraft Server pr
 - [Localhost](https://github.com/marcocusano/minecraft-roleplay/wiki/Localhost-Installation) (Windows + Docker + Paper)\
 You can even check the `localhost` branch to get your pre-configured Docker and Paper localhost.
 - [VPS or a Dedicated Server](https://github.com/marcocusano/minecraft-roleplay/wiki/Ubuntu-Installation) (Ubuntu + Paper + _(optional) Velocity_)\
-You can even check the `ubuntu` branch to get your pre-configured Ubuntu Server, then run `install-single.sh` for a single-server configuration or `install-multi.sh`
+You can even check the `ubuntu` branch to get your pre-configured Ubuntu Server, then run `install-single.sh` for a single-server configuration (Paper Only) or `install-multi.sh` to use (Velocity + Paper Lobby + Paper Roleplay)
 
 ## Technical Details
 - [Database Structure](https://github.com/marcocusano/minecraft-roleplay/wiki/Database-Structure)
-- [Roleplay Engine](https://github.com/marcocusano/minecraft-roleplay/wiki/Minecraft-Engine) (Minecraft Plugin)
 - [Roleplay Management System (R.M.S.)](https://github.com/marcocusano/minecraft-roleplay/wiki/Roleplay-Management-System) (Web Application)
+- [Roleplay Engine](https://github.com/marcocusano/minecraft-roleplay/wiki/Minecraft-Engine) (Minecraft Plugin)
 
 ## FAQ
 
