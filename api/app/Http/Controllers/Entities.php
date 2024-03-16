@@ -2,17 +2,22 @@
 
 namespace App\Http\Controllers;
 
+// Models
 use App\Models\User;
 use App\Models\Company;
+// Enums
 use App\Enums\EntityType;
+// Resources
+use App\Http\Resources\CompanyResource;
+use App\Http\Resources\UserResource;
 
 use Illuminate\Routing\Controller;
 
 class Entities extends Controller {
 
-    public static function types() { return EntityType::class; }
+    public static function types() { return EntityType::cases(); }
 
-    public static function get(EntityType $entityType, $entityId):User|Company|array {
+    public static function get(string $entityType, $entityId):UserResource|CompanyResrouce|array {
         switch ($entityType) {
             case EntityType::CITIZEN:
                 return Entities::getUser($entityId);
@@ -23,27 +28,12 @@ class Entities extends Controller {
         }
     }
 
-    public static function getUser($id):User {
-        return User::findOrFail($id);
+    public static function getUser($id):UserResource {
+        return New UserResource(User::findOrFail($id));
     }
 
-    public static function getCompany($id):Company {
-        return Company::findOrFail($id);
-    }
-
-    public static function stringToType(string $searchString):EntityType {
-        switch ($searchString) {
-            case EntityType::CITIZEN->name === $searchString:
-                return EntityType::CITIZEN;
-                break;
-            case EntityType::COMPANY->name === $searchString:
-                return EntityType::COMPANY;
-                break;
-            case EntityType::SERVER->name === $searchString:
-            default:
-                return EntityType::SERVER;
-                break;
-        }
+    public static function getCompany($id):CompanyResource {
+        return New CompanyResource(Company::findOrFail($id));
     }
 
 }

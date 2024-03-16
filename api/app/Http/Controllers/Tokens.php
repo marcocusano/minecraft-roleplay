@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaction;
-use App\Http\Resources\TransactionResource;
-
+// Laravel
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+// Requests
+use \App\Http\Requests\Logins\DiscordRequest;
 
 class Transactions extends Controller {
 
     public function login(Request $request) {
         
+
+
     }
 
     public function logout(Request $request) {
+
+    }
+
+    public function discordLogin(DiscordRequest $request) {
 
     }
 

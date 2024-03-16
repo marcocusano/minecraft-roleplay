@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+// Laravel
+use Illuminate\Support\Facades\DB;
 use Illuminate\Routing\Controller;
-
 // Models
 use App\Models\Company;
-use App\Models\User;
-// Requests
-use App\Http\Requests\CompanyRequest;
-use App\Http\Requests\CompanyOwnerRequest;
+use App\Models\CompanyEmployee;
 // Resources
-use App\Http\Resources\CompanyResource;
 use App\Http\Resources\UserResource;
+use App\Http\Resources\CompanyResource;
+use App\Http\Resources\CompanyEmployeeResource;
+use App\Http\Resources\CompanyRoleResource;
+
 
 class Companies extends Controller {
 
@@ -24,11 +25,9 @@ class Companies extends Controller {
         return CompanyResource::collection(Company::all());
     }
 
-    public function create(CompanyRequest $request) {
+    public function create(\App\Http\Requests\Companies\CompanyRequest $request) {
         $data = $request->validated();
-        $company = new Company();
-        $company->fill($data);
-        $company->save();
+        $company = Company::create($data);
         return new CompanyResource($company);
     }
 
@@ -37,7 +36,7 @@ class Companies extends Controller {
         return new CompanyResource($company);
     }
 
-    public function update($id, CompanyRequest $request) {
+    public function update($id, \App\Http\Requests\Companies\CreateRequest $request) {
         $company = Company::findOrFail($id);
         $data = $request->validated();
         $company->update($data);
@@ -56,7 +55,7 @@ class Companies extends Controller {
 
     public function employees($id) {
         $company = Company::findOrFail($id);
-        return UserResource::collection($company->employees);
+        return CompanyEmployeeResource::collection($company->employees);
     }
 
     public function owner($id) {
@@ -69,6 +68,11 @@ class Companies extends Controller {
         return new CompanyResource($company);
     }
 
+    public function roles($id) {
+        $company = Company::findOrFail($id);
+        return CompanyRoleResource::collection($company->roles);
+    }
+
     public function updater($id) {
         $company = Company::findOrFail($id);
         return new UserResource($company->updater);
@@ -78,16 +82,25 @@ class Companies extends Controller {
     // Employees //
     ///////////////
 
-    public function fireEmployee($id, $userId) {
+    public function fireEmployee($id, $userId, \App\Http\Requests\Companies\Employees\DeleteRequest $request) {
+        $data = $request->validated();
         $company = Company::findOrFail($id);
+        $employee = CompanyEmployee::where('user_id', $userId)->firstOrFail();
+        if ($employee->company_id !== $company->id) { return response([], 403); }
+        DB::table('company_employees')->where('user_id', $userId)->delete();
+
+        return New CompanyEmployeeResource($employee);
     }
 
-    public function hireEmployee($id, $userId) {
+    public function hireEmployee($id, \App\Http\Requests\Companies\Employees\CreateRequest $request) {
+        $data = $request->validated();
         $company = Company::findOrFail($id);
-        $user = User::findOrFail($userId);
+        $data['company_id'] = $company->id;
+        $employee = CompanyEmployee::create($data);
+        return new CompanyEmployeeResource($employee);
     }
 
-    public function setOwner($id, CompanyOwnerRequest $request) {
+    public function setOwner($id, \App\Http\Requests\Companies\OwnerRequest $request) {
         $data = $request->validated();
         $company = Company::findOrFail($id);
         $company->update($data);

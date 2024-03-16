@@ -2,10 +2,8 @@
 
 namespace App\Models;
 
+// Laravel
 use Illuminate\Database\Eloquent\Model;
-
-// Models
-use App\Models\User;
 
 class CompanyRole extends Model {
     
@@ -15,11 +13,12 @@ class CompanyRole extends Model {
      * @var array<int, string>
      */
     protected $fillable = [
-        'company_id',
-        'name',
-        'description',
-        'salary',
-        'permissions',
+        'sender_type',
+        'sender_id',
+        'receiver_type',
+        'receiver_id',
+        'review',
+        'rate',
         'created_at',
         'updated_at',
     ];
@@ -37,7 +36,6 @@ class CompanyRole extends Model {
      * @var array<string, string>
      */
     protected $casts = [
-        'permissions' => 'json',
         'created_at' => 'datetime',
         'updated_at' => 'datetime'
     ];
@@ -53,6 +51,6 @@ class CompanyRole extends Model {
     // Relations //
     ///////////////
 
-    public function employees() { return $this->belongsToMany(User::class, 'company_employees', 'role_id', 'user_id'); }
+    
 
 }

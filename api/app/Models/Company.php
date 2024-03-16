@@ -9,9 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 // Models
 use App\Models\User;
 use App\Models\CompanyRole;
-
-// Resoures
-use App\Http\Resources\UserResource;
+use App\Models\CompanyEmployee;
 
 class Company extends Model {
     
@@ -26,15 +24,16 @@ class Company extends Model {
         'parent_id',
         'owner_id',
         'luckperms',
+        'permissions',
         'name',
         'description',
         'location',
         'icon',
         'is_public',
         'is_police',
+        'is_hackerable',
         'is_master',
         'balance',
-        'status'
     ];
 
     /**
@@ -50,6 +49,7 @@ class Company extends Model {
      * @var array<string, string>
      */
     protected $casts = [
+        'permissions' => 'json',
         'location' => 'json',
         'created_at' => 'datetime',
         'updated_at' => 'datetime'
@@ -66,9 +66,9 @@ class Company extends Model {
     // Relations //
     ///////////////
 
-    public function employees() { return $this->hasManyThrough(User::class, CompanyEmployee::class, 'user_id', 'company_id'); }
+    public function employees() { return $this->hasMany(CompanyEmployee::class, 'company_id'); }
     public function owner() { return $this->belongsTo(User::class, 'owner_id'); }
     public function parent() { return $this->belongsTo(Company::class, 'parent_id'); }
-    public function roles() { return $this->belongsTo(CompanyRole::class, 'company_id'); }
+    public function roles() { return $this->hasMany(CompanyRole::class, 'company_id'); }
 
 }

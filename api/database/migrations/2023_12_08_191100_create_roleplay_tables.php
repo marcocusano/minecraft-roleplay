@@ -22,7 +22,9 @@ return new class extends Migration
             $table->json('icon')->nullable();
             $table->boolean('is_public')->default(false);
             $table->boolean('is_police')->default(false);
+            $table->boolean('is_hackerable')->default(true);
             $table->boolean('is_master')->default(false);
+            $table->json('permissions')->nullable();
             $table->double('balance')->default(0);
             $table->datetimes();
         });
@@ -34,7 +36,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->text('description')->nullable();
             $table->json('permissions')->nullable();
-            $table->double('default_payment_value')->default(0);
+            $table->double('salary')->default(0);
             $table->datetimes();
         });
 
@@ -46,19 +48,19 @@ return new class extends Migration
             $table->datetimes(); // created_at = Hire Date; updated_at = Last payment Date;
         });
 
-        // Company Logs
-        Schema::create('company_logs', function(Blueprint $table) {
+        // Reviews
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->bigInteger('company_id')->unsigned()->index()->foreign()->references('id')->on('companies');
-            $table->bigInteger('author_id')->unsigned()->index()->foreign()->references('id')->on('users');
-            $table->bigInteger('user_id')->unsigned()->index()->foreign()->references('id')->on('users');
-            $table->string('type');
-            $table->text('description')->nullable();
+            $table->string('sender_type', 10)->index(); // SERVER, CITIZEN, COMPANY
+            $table->bigInteger('sender_id')->nullable()->unsigned()->index(); // $user->id || $company->id || null
+            $table->string('receiver_type', 10)->index(); // SERVER, CITIZEN, COMPANY
+            $table->bigInteger('receiver_id')->nullable()->unsigned()->index(); // $user->id || $company->id || null
+            $table->text('review')->nullable();
             $table->datetimes();
             $table->tinyInteger('rate');
         });
 
-        // Bank Operations
+        // Transactions
         Schema::create('transactions', function(Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('type', 10)->index(); // ATM, CASH, CHECK, DEPOSIT, RECEIPT, TRANSFER
@@ -86,6 +88,7 @@ return new class extends Migration
             $table->dateTime('issued_at')->useCurrent();
             $table->dateTime('expired_at');
         });
+
     }
 
     /**

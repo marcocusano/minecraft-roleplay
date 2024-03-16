@@ -1,0 +1,612 @@
+{
+	"info": {
+		"_postman_id": "6ca9b633-8bb5-4aa2-95ed-fa03424c62f2",
+		"name": "v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31928221",
+		"_collection_link": "https://www.postman.com/minecraft-roleplay/workspace/public/collection/31928221-6ca9b633-8bb5-4aa2-95ed-fa03424c62f2?action=share&source=collection_link&creator=31928221"
+	},
+	"item": [
+		{
+			"name": "Companies",
+			"item": [
+				{
+					"name": "Employees",
+					"item": [
+						{
+							"name": "All Employees",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL}}/companies/1/employees",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"companies",
+										"1",
+										"employees"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Employee",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"description": "required|unique|exists:users,id",
+											"type": "text"
+										},
+										{
+											"key": "role_id",
+											"value": "1",
+											"description": "required|exists:company_roles,id",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BaseURL}}/companies/1/employees",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"companies",
+										"1",
+										"employees"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Existing Employee",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "sender_type",
+											"value": "CITIZEN",
+											"description": "nullable|in:SERVER,COMPANY,CITIZEN",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "sender_id",
+											"value": "1",
+											"description": "nullable|numeric",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "rate",
+											"value": "5",
+											"description": "nullable|numeric|min:1|max:5",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "review",
+											"value": "One of the best Employee ever found!",
+											"description": "nullable|string|max:100",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BaseURL}}/companies/1/employees/1",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"companies",
+										"1",
+										"employees",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Roles",
+					"item": [
+						{
+							"name": "All Roles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL}}/companies/1/roles",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"companies",
+										"1",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "All Companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/companies",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Company",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/companies/1",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"companies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Company Owner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/companies/1/owner",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"companies",
+								"1",
+								"owner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Company",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "parent_id",
+									"value": "",
+									"description": "nullable|numeric|exists:companies,id;",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "owner_id",
+									"value": "",
+									"description": "nullable|unique|exists:users,id",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "luckperms",
+									"value": "",
+									"description": "nullable|json",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Postman Company",
+									"description": "required|unique|string|min:3|max:50",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This company was generated using the Postman API.",
+									"description": "nullable|string|max:255",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "",
+									"description": "nullable|json",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "permissions",
+									"value": "",
+									"description": "nullable|json",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "icon",
+									"value": "",
+									"description": "nullable|string|min:3|max:30",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "is_public",
+									"value": "",
+									"description": "nullable|boolean",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "is_police",
+									"value": "",
+									"description": "nullable|boolean",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "is_hackerable",
+									"value": "",
+									"description": "nullable|boolean",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "is_master",
+									"value": "",
+									"description": "nullable|boolean",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "balance",
+									"value": "",
+									"description": "numeric|max:999999999",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "update_at",
+									"value": "",
+									"description": "nullable|datetime",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BaseURL}}/companies",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Existing Company",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"parent_id\": null,\r\n    \"owner_id\": 1,\r\n    \"luckperms\": null,\r\n    \"name\": \"CyberTek\",\r\n    \"description\": \"Digital provider and managament system Owner. The owner of this Company is just a Failure and a Scammer! But hey... the publish date was on June 2023 ❤️\",\r\n    \"location\": null,\r\n    \"icon\": null,\r\n    \"is_public\": 0,\r\n    \"is_police\": 0,\r\n    \"is_master\": 1,\r\n    \"balance\": 157457235.25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/companies/1",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"companies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Company",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/companies/1",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"companies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "All Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/transactions",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/transactions/1",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"transactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transaction Sender",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/transactions/1/sender",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"transactions",
+								"1",
+								"sender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transaction Receiver",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/transactions/1/receiver",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"transactions",
+								"1",
+								"receiver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transaction Updater",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/transactions/1/updater",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"transactions",
+								"1",
+								"updater"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"CASH\",\r\n    \"sender_type\": \"SERVER\",\r\n    \"sender_id\": null,\r\n    \"receiver_type\": \"CITIZEN\",\r\n    \"receiver_id\": 1,\r\n    \"description\": \"Welcome to my awesome Roleplay\",\r\n    \"amount\": 1000,\r\n    \"payment_method\": null,\r\n    \"created_at\": \"2023-12-22 13:52:00\",\r\n    \"updated_at\": \"2023-12-22 13:52:00\",\r\n    \"updated_by\": null,\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/transactions",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Existing Transaction",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Salary that you will never see. Denied: 404 Brain not found.\",\r\n    \"updated_at\": \"2023-12-22 13:52:00\",\r\n    \"updated_by\": 1,\r\n    \"status\": -1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/transactions/3",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"transactions",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transaction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/transactions/1",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"transactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add({",
+					"    key: \"Accept\",",
+					"    value: \"application/json\"",
+					"});",
+					"pm.request.headers.add({",
+					"    key: \"Content-Type\",",
+					"    value: \"application/json;charset=utf-8\"",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

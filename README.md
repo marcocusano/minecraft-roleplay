@@ -1,7 +1,8 @@
-### **WARNING!!! THE CURRENT GUIDE IS ACTUALLY JUST A WORKING PROGRESS DOCUMENTATION AND I SHARED TECHNICAL INFORMATIONS ONLY, SUCH AS [DATABASE STRUCTURE](https://github.com/marcocusano/minecraft-roleplay/wiki/Database-Structure). THE MINECRAFT PLUGIN ([Roleplay Engine](https://github.com/marcocusano/minecraft-roleplay/wiki/Roleplay-Engine)) AND THE VUE.JS WEB APPLICATION ([Roleplay Management System](https://github.com/marcocusano/minecraft-roleplay/wiki/Roleplay-Management-System)) ARE STILL UNDER DEVELOPMENT AS DESCRIBED BY THE FOLLOWING PHASES:**
-- **Phase 1 (Current)** - Web Engine: REST Api System based on Laravel & Sanctum;
-- **Phase 2** - Layout: All web applications static pages, with static example datas;
-- **Phase 3** - GodMode: A working web application with a god powers! (No login / No permissions);
+# Minecraft Roleplay Development Status
+
+- **Phase 1 (Current)** - Web Engine: REST API System based on Laravel;
+- **Phase 2** - Layout: All web application pages, based on Laravel seeding;
+- **Phase 3** - GodMode: A working web application with god powers! (Actions can be executed without login or permissions filter);
 - **Phase 4** - Web Release: The first working release of the web application;
 - **Phase 5** - Goto Minecraft: An alpha version of the Minecraft plugin;
 
@@ -17,12 +18,11 @@ The definitive guide to host and code your own Minecraft Roleplay Server!
 Follow this guide to start a new pre-configured Minecraft Server and Web Application.
 This Repo was made to self-host a working end-user project. If you find a bug from an existing feature you're free to open a pull request.
 
-**Do not ask for support if you edit the code of your own, breaking everything cuz you're a PiZzA ChatGPTer**.\
-**That's a free project and you're free to use as free to leave! Don't you think so?**
+**Do not ask for support if you edit the code of your own, breaking everything cuz you're a PiZzA ChatGPTer. That's a free project and you're free to use as free to leave! Don't you think so?**
 
 ## Requirements
 - JDK (17+)
-- MySQL (5.2+)
+- MySQL (5.7+)
 - NPM (9.7+)
 - Node.js (18.14+)
 - PHP (8.2+)
@@ -64,6 +64,7 @@ I'm not going to talk about pre-made solutions but self-hosted solutions. So, if
 > If you're a programmer and not a ChatGPTer you can try to learn Java directly. Or maybe yes, try to ask ChatGPT how to...
 
 ## Testimonials
+The features available within this project, web app, Minecraft plugin, and others may differ from what is offered by platforms that adopt part or all of the logic present here.
 |                                                                                                                                           | **Project Name**                                                                   |
 |-------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
 | [![AtlantisRP](https://github.com/marcocusano/minecraft-roleplay/blob/main/assets/testimonial-atlantisrp.png)](https://app.atlantisrp.it) | **AtlantisRP**: A PHP adaptation by CoralMC ([Preview](https://app.atlantisrp.it)) |

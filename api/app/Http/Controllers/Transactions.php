@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaction;
-use App\Http\Resources\TransactionResource;
-
-use Illuminate\Http\Request;
+// Laravel
 use Illuminate\Routing\Controller;
+// Models
+use App\Models\Transaction;
+// Resource
+use App\Http\Resources\TransactionResource;
 
 class Transactions extends Controller {
 
@@ -19,7 +20,7 @@ class Transactions extends Controller {
         return response()->json($companies);
     }
 
-    public function create(Request $request) {
+    public function create(\App\Http\Requests\Transactions\CreateRequest $request) {
         $data = $request->validated();
         $transaction = new Transaction();
         $transaction->fill($data);
@@ -32,7 +33,7 @@ class Transactions extends Controller {
         return response()->json($transaction);
     }
 
-    public function update($id, Request $request) {
+    public function update($id, \App\Http\Request\Transactions\CreateRequest $request) {
         $transaction = Transaction::findOrFail($id);
         $data = $request->validate(TransactionResource::rules($request));
         $transaction->update($data);

@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Database\Seeders\UsersSeeder;
 use Database\Seeders\CompaniesSeeder;
+use Database\Seeders\CompanyRolesSeeder;
+use Database\Seeders\CompanyEmployeesSeeder;
 use Database\Seeders\TransactionsSeeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -15,6 +17,8 @@ class DatabaseSeeder extends Seeder {
 
         $this->call(UsersSeeder::class);
         $this->call(CompaniesSeeder::class);
+        $this->call(CompanyRolesSeeder::class);
+        $this->call(CompanyEmployeesSeeder::class);
         $this->call(TransactionsSeeder::class);
 
         /*

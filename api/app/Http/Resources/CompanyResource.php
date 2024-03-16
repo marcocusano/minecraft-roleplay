@@ -2,7 +2,14 @@
 
 namespace App\Http\Resources;
 
+// Laravel
 use Illuminate\Http\Resources\Json\JsonResource;
+
+// Models
+use App\Models\Company;
+
+// Resources
+use App\Http\Resources\CompanyEmployeeResource;
 
 class CompanyResource extends JsonResource {
 
@@ -15,11 +22,13 @@ class CompanyResource extends JsonResource {
             'name' => $this->name,
             'description' => $this->description,
             'location' => json_decode($this->loaction),
-            'icon' => json_decode($this->icon),
+            'icon' => $this->icon,
             'is_public' => $this->is_public ? true : false,
             'is_police' => $this->is_police ? true : false,
             'is_master' => $this->is_master ? true : false,
             'balance' => $this->balance,
+            'employees' => CompanyEmployeeResource::collection(Company::find($this->id)->employees),
+            'roles' => CompanyRoleResource::collection(Company::find($this->id)->roles)
         ];
     }
     

@@ -1,19 +1,24 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Transactions;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateTransactionRequest extends FormRequest {
+// Enums
+use App\Enums\EntityType;
+use App\Enums\PaymentMethodType;
+use App\Enums\TransactionType;
+
+class CreateRequest extends FormRequest {
 
     public function rules() {
         return [
-            'type' => 'required|in:' . implode(",", \App\Enums\TransactionTypes),
-            'sender_type' => 'required|in:' . implode(",", \App\Enums\EntityTypes),
+            'type' => 'required|in:' . implode(",", TransactionType::cases()),
+            'sender_type' => 'required|in:' . implode(",", EntityType::cases()),
             'sender_id' => 'nullable|numeric',
-            'receiver_type' => 'required|in:' . implode(",", \App\Enums\EntityTypes),
+            'receiver_type' => 'required|in:' . implode(",", EntityType::cases()),
             'receiver_id' => 'nullable|numeric',
-            'payment_method' => 'in:' . implode(",", \App\Enums\PaymentMethodTypes) . '|nullable',
+            'payment_method' => 'nullable|in:' . implode(",", PaymentMethodType::cases()),
             'description' => 'nullable|string|max:255',
             'created_at' => 'required|datetime',
             'updated_at' => 'datetime',
