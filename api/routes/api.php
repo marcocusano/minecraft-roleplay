@@ -47,13 +47,23 @@ Route::group(['prefix' => "v1"], function () {
         Route::GET("/{id}/parent", [Companies::class, 'parent'])->name('parent'); // Get the Parent Company
 
         /* Employees */
-        Route::prefix('{id}/employees')->name('employees.')->controller(Companies::class)->group(function() {
+        Route::prefix('{id}/employees')->name('employees.')->group(function() {
             Route::GET("/", 'employees')->name('all'); // Retrieve all Company Employees
             Route::POST("/", 'hireEmployee')->name('create'); // Hire Employee
             Route::GET("/{userId}", 'getEmployee')->name('read'); // Get an existing User Employee
             Route::PATCH("/{userId}", 'promoteEmployee')->name('update'); // Promote Employee
             Route::DELETE("/{userId}", 'fireEmployee')->name('delete'); // Fire Employee
         });
+
+        /* Jobs */
+        Route::prefix('jobs')->name('jobs.')->group(function() {
+            Route::GET("/", 'jobs')->name('all'); // Retrieve all Jobs by any Company
+            Route::POST("/", 'createJob')->name('create'); // Create a new Job announcement
+            Route::GET("/{id}", 'getJob')->name('read'); // Get an existing Job announcement
+            Route::PATCH("/{id}", 'updateJob')->name('update'); // Update an existing Job announcement
+            Route::DELETE("/{id}", 'deleteJob')->name('delete'); // Delete an existing Job announcement
+        });
+        Route::GET("/{id}/jobs", 'jobs')->name('allByCompany'); // Retrieve all Jobs by a Company
 
         /* Roles */
         Route::prefix('{id}/roles')->name('roles.')->group(function() {

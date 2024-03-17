@@ -33,7 +33,7 @@ return new class extends Migration
         Schema::create('company_roles', function(Blueprint $table) {
             $table->id()->autoIncrement();
             $table->bigInteger('company_id')->index()->foreign()->references('id')->on('companies');
-            $table->string('name')->unique();
+            $table->string('name', 100)->unique();
             $table->text('description')->nullable();
             $table->json('permissions')->nullable();
             $table->double('salary')->default(0);
@@ -46,6 +46,26 @@ return new class extends Migration
             $table->bigInteger('company_id')->unsigned()->index();
             $table->bigInteger('role_id')->index();
             $table->datetimes(); // created_at = Hire Date; updated_at = Last payment Date;
+        });
+
+        // Company Jobs
+        Schema::create('company_jobs', function(Blueprint $table) {
+            $table->id()->autoIncrement();
+            $table->bigInteger('company_id')->unsigned()->index()->foreign()->references('id')->on('companies');
+            $table->bigInteger('role_id')->unsigned()->index()->foreign()->references('id')->on('company_roles');
+            $table->string('name', 100);
+            $table->text('description')->nullable();
+            $table->datetimes();
+            $table->datetime('expires_at');
+            $table->enum('status', \App\Enums\CompanyJobType::cases())->default(\App\Enums\CompanyJobType::ACTIVE);
+        });
+
+        // Company Job Subscribers
+        Schema::create('company_job_subscribers', function(Blueprint $table) {
+            $table->bigInteger('job_id')->unsigned()->index()->foreign()->references('id')->on('company_jobs');
+            $table->bigInteger('user_id')->unsigned()->index()->foreign()->references('id')->on('users');
+            $table->datetimes();
+            $table->enum('status', \App\Enums\CompanyJobSubscriberType::cases())->default(\App\Enums\CompanyJobSubscriberType::UNDER_REVIEW);
         });
 
         // Reviews
@@ -98,7 +118,9 @@ return new class extends Migration
         Schema::dropIfExists('companies');
         Schema::dropIfExists('company_roles');
         Schema::dropIfExists('company_employees');
-        Schema::dropIfExists('company_logs');
+        Schema::dropIfExists('company_jobs');
+        Schema::dropIfExists('company_job_subscriptions');
+        Schema::dropIfExists('reviews');
         Schema::dropIfExists('transactions');
         Schema::dropIfExists('user_documents');
     }

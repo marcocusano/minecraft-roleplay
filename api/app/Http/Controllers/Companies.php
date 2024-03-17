@@ -8,10 +8,12 @@ use Illuminate\Routing\Controller;
 // Models
 use App\Models\Company;
 use App\Models\CompanyEmployee;
+use App\Models\CompanyJob;
 // Resources
 use App\Http\Resources\UserResource;
 use App\Http\Resources\CompanyResource;
 use App\Http\Resources\CompanyEmployeeResource;
+use App\Http\Resources\CompanyJobResource;
 use App\Http\Resources\CompanyRoleResource;
 
 
@@ -25,7 +27,7 @@ class Companies extends Controller {
         return CompanyResource::collection(Company::all());
     }
 
-    public function create(\App\Http\Requests\Companies\CompanyRequest $request) {
+    public function create(\App\Http\Requests\Companies\CreateRequest $request) {
         $data = $request->validated();
         $company = Company::create($data);
         return new CompanyResource($company);
@@ -58,6 +60,17 @@ class Companies extends Controller {
         return CompanyEmployeeResource::collection($company->employees);
     }
 
+    public function jobs($id = null) {
+        $jobs = [];
+        if ($id) {
+            $company = Company::findOrFail($id);
+            $jobs = CompanyJobResource::collection($company->jobs);
+        } else {
+            $jobs = CompanyJobResource::collection(DB::table('company_jobs')->get());
+        }
+        return $jobs;
+    }
+
     public function owner($id) {
         $company = Company::findOrFail($id);
         return new UserResource($company->owner);
@@ -88,7 +101,7 @@ class Companies extends Controller {
         $employee = CompanyEmployee::where('user_id', $userId)->firstOrFail();
         if ($employee->company_id !== $company->id) { return response([], 403); }
         DB::table('company_employees')->where('user_id', $userId)->delete();
-
+        // TODO: Add a review if sent
         return New CompanyEmployeeResource($employee);
     }
 
