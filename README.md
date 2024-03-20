@@ -65,6 +65,5 @@ I'm not going to talk about pre-made solutions but self-hosted solutions. So, if
 
 ## Testimonials
 The features available within this project, web app, Minecraft plugin, and others may differ from what is offered by platforms that adopt part or all of the logic present here.
-|                                                                                                                                           | **Project Name**                                                                   |
-|-------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| [![AtlantisRP](https://github.com/marcocusano/minecraft-roleplay/blob/main/assets/testimonial-atlantisrp.png)](https://app.atlantisrp.it) | **AtlantisRP**: A PHP adaptation by CoralMC ([Preview](https://app.atlantisrp.it)) |
+
+The name of the testimonial included before was not really covered by a valid or pending Copyright certificate. **Investigating on it as long as the "Business Company" sent a DMCA request without owning or giving to GitHub Support a valid copyright license.**

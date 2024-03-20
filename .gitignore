@@ -1,2 +1,6 @@
+# Ignore completely: intimidations by failed individuals
+/api/node_modules
+/api/.vscode
 /app/node_modules
 /app/.vscode
+/dist

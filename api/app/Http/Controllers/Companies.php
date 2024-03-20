@@ -9,6 +9,7 @@ use Illuminate\Routing\Controller;
 use App\Models\Company;
 use App\Models\CompanyEmployee;
 use App\Models\CompanyJob;
+use App\Models\CompanyRole;
 // Resources
 use App\Http\Resources\UserResource;
 use App\Http\Resources\CompanyResource;
@@ -119,5 +120,17 @@ class Companies extends Controller {
         $company->update($data);
         return new CompanyResource($company);
     }
+
+    //////////
+    // Jobs //
+    //////////
+
+    public function getJob($id) { return New CompanyJobResource(CompanyJob::findOrFail($id)); }
+
+    ///////////
+    // Roles //
+    ///////////
+
+    public function getRole($id) { return new CompanyRoleResource(CompanyRole::findOrFail($id)); }
 
 }
