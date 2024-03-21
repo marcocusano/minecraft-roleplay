@@ -42,6 +42,7 @@ class Companies extends Controller {
     public function update($id, \App\Http\Requests\Companies\CreateRequest $request) {
         $company = Company::findOrFail($id);
         $data = $request->validated();
+        var_dump($data); die();
         $company->update($data);
         return new CompanyResource($company);
     }
@@ -61,15 +62,9 @@ class Companies extends Controller {
         return CompanyEmployeeResource::collection($company->employees);
     }
 
-    public function jobs($id = null) {
-        $jobs = [];
-        if ($id) {
-            $company = Company::findOrFail($id);
-            $jobs = CompanyJobResource::collection($company->jobs);
-        } else {
-            $jobs = CompanyJobResource::collection(DB::table('company_jobs')->get());
-        }
-        return $jobs;
+    public function jobs($id) {
+        $company = Company::findOrFail($id);
+        return CompanyJobResource::collection($company->jobs);
     }
 
     public function owner($id) {
@@ -124,6 +119,8 @@ class Companies extends Controller {
     //////////
     // Jobs //
     //////////
+
+    public function allJobs() { return CompanyJobResource::collection(CompanyJob::all()); }
 
     public function getJob($id) { return New CompanyJobResource(CompanyJob::findOrFail($id)); }
 

@@ -18,11 +18,12 @@ class CompanyRoleResource extends JsonResource {
             'company_id' => $this->company_id,
             'name' => $this->name,
             'description' => $this->description,
-            'salary' => $this->salary
+            'salary' => $this->salary,
+            'permissions' => $this->permissions
         ];
 
         // Company Relation
-        if (in_array($request->route()->getName(), ['companies.roles.*'])) { $resource['company'] = Company::find($this->company_id); }
+        if ($request->routeIs(['companies.roles.*'])) { $resource['company'] = Company::find($this->company_id); }
 
         return $resource;
     }

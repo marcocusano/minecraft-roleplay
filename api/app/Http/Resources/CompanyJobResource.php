@@ -7,6 +7,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 // Models
 use App\Models\Company;
+use App\Models\CompanyRole;
 
 class CompanyJobResource extends JsonResource {
 
@@ -24,7 +25,7 @@ class CompanyJobResource extends JsonResource {
         ];
 
         // Relations
-        if (in_array($request->route()->getName(), ['companies.jobs.*'])) {
+        if ($request->routeIs(['companies.jobs.*'])) {
             $resource['company'] = Company::find($this->company_id) ?: [];
             $resource['role'] = CompanyRole::find($this->role_id) ?: [];
         }

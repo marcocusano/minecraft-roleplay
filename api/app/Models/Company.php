@@ -66,10 +66,10 @@ class Company extends Model {
     // Relations //
     ///////////////
 
-    public function employees() { return $this->hasMany(CompanyEmployee::class, 'company_id'); }
-    public function jobs() { return $this->hasMany(CompanyJob::class, 'company_id'); }
+    public function employees() { return $this->hasMany(CompanyEmployee::class); }
+    public function jobs() { return $this->hasMany(CompanyJob::class); }
     public function owner() { return $this->belongsTo(User::class, 'owner_id'); }
     public function parent() { return $this->belongsTo(Company::class, 'parent_id'); }
-    public function roles() { return $this->hasMany(CompanyRole::class, 'company_id'); }
+    public function roles() { return $this->hasMany(CompanyRole::class); }
 
 }

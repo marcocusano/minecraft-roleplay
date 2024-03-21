@@ -8,10 +8,9 @@
 
 **YOU MAY CLONE THIS REPO WHEN THIS MESSAGE WILL BE REMOVED AND WHEN YOU SEE A VERSION ON TOP OF ME!**
 
-**IN THE MEANWHILE, HERE IS A PREVIEW SCREEN OF THE VUE.JS LOG-IN SCREEN! IT WILL CHANGE DURING THE DEVELOPMENT, SO STAY TUNED!!!**
-![Minecraft Roleplay Management System](https://github.com/marcocusano/minecraft-roleplay/blob/main/assets/screen-login.png)
-
 ***
+
+![Minecraft Roleplay Management System](https://github.com/marcocusano/minecraft-roleplay/blob/main/assets/welcome.png)
 
 # Minecraft Roleplay
 The definitive guide to host and code your own Minecraft Roleplay Server!
@@ -41,29 +40,29 @@ You can even check the `ubuntu` branch to get your pre-configured Ubuntu Server,
 
 ## FAQ
 
-**Which server should I buy?**
-> Of course, it depends on your Project budget and aspectative. How many players are you looking to have? Are you looking for a self-hosted solution (like a VPS or a Dedicated) or a pre-made solution?
+> **Which server should I buy?**
+>> Of course, it depends on your Project budget and aspectative. How many players are you looking to have? Are you looking for a self-hosted solution (like a VPS or a Dedicated) or a pre-made solution?
 I'm not going to talk about pre-made solutions but self-hosted solutions. So, if you've a little budget you actually need a [Single-Server Configuration](#). Instead, if you've an higher budget you can try the [Multi-Server Configuration](#).
 
 
-**Which Minecraft Server engine should I use?**
-> Absolutely [PaperMC](https://papermc.io/software/paper) fork of Spigot, fork of Bukkit. Implements both in a balanced and optmized performance. Instead, If you're looking for a multi-server engine (with a Lobby, for example), you may use Paper for your Lobby, Vannilla, etc. and [Velocity](https://papermc.io/software/velocity) as a Proxy mandatory. Also, if you are a Developer you should try to taking a look to a [very-well-documented APIs](https://jd.papermc.io/paper/1.20/index.html). Those links may not be updated, but you can even try to use Google!
+> **Which Minecraft Server engine should I use?**
+>> Absolutely [PaperMC](https://papermc.io/software/paper) fork of Spigot, fork of Bukkit. Implements both in a balanced and optmized performance. Instead, If you're looking for a multi-server engine (with a Lobby, for example), you may use Paper for your Lobby, Vannilla, etc. and [Velocity](https://papermc.io/software/velocity) as a Proxy mandatory. Also, if you are a Developer you should try to taking a look to a [very-well-documented APIs](https://jd.papermc.io/paper/1.20/index.html). Those links may not be updated, but you can even try to use Google!
 
 
-**Which Minecraft plugins should I install?**
-> There is an infinite-archive of plugins on [SpigotMC](https://www.spigotmc.org). [Here is a list of core plugins and more](https://github.com/marcocusano/minecraft-roleplay/wiki/Minecraft-Useful-Plugins) suggested for a good quickstart of your Roleplay Server.
+> **Which Minecraft plugins should I install?**
+>> There is an infinite-archive of plugins on [SpigotMC](https://www.spigotmc.org). [Here is a list of core plugins and more](https://github.com/marcocusano/minecraft-roleplay/wiki/Minecraft-Useful-Plugins) suggested for a good quickstart of your Roleplay Server.
 
 
-**How can i customize my Minecraft Server?**
-> [ItemsAdder](https://www.spigotmc.org/resources/%E2%9C%A8itemsadder%E2%AD%90emotes-mobs-items-armors-hud-gui-emojis-blocks-wings-hats-liquids.73355/), [ModelEngine](https://www.spigotmc.org/resources/conxeptworks-model-engine%E2%80%94ultimate-custom-entity-model-manager-1-16-5-1-20.79477/) + [MythicMobs](https://mythiccraft.io/index.php?pages/official-mythicmobs-download/) and more and more and more... If you didn't see yet, [here is a list of core plugins and more](https://github.com/marcocusano/minecraft-roleplay/wiki/Minecraft-Useful-Plugins) to customize your server. Also, you can create custom resource-packs importing Custom Models made with [Blockbench](https://www.blockbench.net/)! [Here is a list of pre-made Roleplay models](https://github.com/marcocusano/minecraft-roleplay/wiki/Roleplay-Models)!
+> **How can i customize my Minecraft Server?**
+>> [ItemsAdder](https://www.spigotmc.org/resources/%E2%9C%A8itemsadder%E2%AD%90emotes-mobs-items-armors-hud-gui-emojis-blocks-wings-hats-liquids.73355/), [ModelEngine](https://www.spigotmc.org/resources/conxeptworks-model-engine%E2%80%94ultimate-custom-entity-model-manager-1-16-5-1-20.79477/) + [MythicMobs](https://mythiccraft.io/index.php?pages/official-mythicmobs-download/) and more and more and more... If you didn't see yet, [here is a list of core plugins and more](https://github.com/marcocusano/minecraft-roleplay/wiki/Minecraft-Useful-Plugins) to customize your server. Also, you can create custom resource-packs importing Custom Models made with [Blockbench](https://www.blockbench.net/)! [Here is a list of pre-made Roleplay models](https://github.com/marcocusano/minecraft-roleplay/wiki/Roleplay-Models)!
 
 
-**Can I use Skript to create custom features?**
-> The quick answer is NO. First of all it's not a programming language and then offers a bad-performance on high volume of Players using complexed Skripts.
-> But I'm not here to judge: you can even try to use it by yourself. [Here is a good website to start](https://skunity.com/). Also, you can join the [Discord Community](https://discord.gg/skript) that will help you a lot.
-> If you're a programmer and not a ChatGPTer you can try to learn Java directly. Or maybe yes, try to ask ChatGPT how to...
+> **Can I use Skript to create custom features?**
+>> The quick answer is NO. First of all it's not a programming language and then offers a bad-performance on high volume of Players using complexed Skripts.
+>> But I'm not here to judge: you can even try to use it by yourself. [Here is a good website to start](https://skunity.com/). Also, you can join the [Discord Community](https://discord.gg/skript) that will help you a lot.
+>> If you're a Developer and not a ChatGPTer, you can try to learn Java directly. Or maybe yes, try to ask ChatGPT how to...
 
-## Testimonials
+## License in few words
+**Completely described [here]() (GNU AGPL 3.0).**
 The features available within this project, web app, Minecraft plugin, and others may differ from what is offered by platforms that adopt part or all of the logic present here.
-
-The name of the testimonial included before was not really covered by a valid or pending Copyright certificate. **Investigating on it as long as the "Business Company" sent a DMCA request without owning or giving to GitHub Support a valid copyright license.**
+Feel free to use, re-use this project as you wish, also for commercial purposes, but including a credit of the original author, for remote usage too. If not, you're not allowed to use it.

@@ -6,11 +6,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 // Models
-use App\Models\Company;
-use App\Models\CompanyRole;
-use App\Models\CompanyJobApplicant;
 
-class CompanyJob extends Model {
+
+class CompanyJobApplicant extends Model {
     
     /**
      * The attributes that are mass assignable.
@@ -18,13 +16,10 @@ class CompanyJob extends Model {
      * @var array<int, string>
      */
     protected $fillable = [
-        'company_id',
-        'role_id',
-        'name',
-        'description',
+        'user_id',
+        'job_id',
         'created_at',
         'updated_at',
-        'expires_at',
         'status'
     ];
 
@@ -43,7 +38,6 @@ class CompanyJob extends Model {
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
-        'expires_at' => 'datetime'
     ];
 
     /**
@@ -57,10 +51,10 @@ class CompanyJob extends Model {
     // Relations //
     ///////////////
 
-    public function company() { return $this->belongsTo(Company::class); }
+    public function company() { return $this->job->company; }
 
-    public function role() { return $this->belongsTo(CompanyRole::class); }
+    public function job() { return $this->belongsTo(CompanyJob::class); }
 
-    public function applicants() { return $this->hasMany(CompanyJobApplicant::class, 'job_id'); }    
+    public function role() { return $this->job->role; }
 
 }

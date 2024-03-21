@@ -41,7 +41,7 @@ class CompaniesSeeder extends Seeder {
                 ],
                 [ /* 4 */
                     /* 'owner_id' => CLOWN */
-                    'name' => 'CrodinoAlfieri',
+                    'name' => 'CrodinoAlfione',
                     'description' => 'A Clown Clothes Company.',
                     'balance' => -1
                 ]

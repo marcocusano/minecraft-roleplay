@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-class CompanyJobSubscriberType {
+class CompanyJobApplicantType {
 
     public const ACCEPTED = 'accepted';
     public const DECLINED = 'declined';

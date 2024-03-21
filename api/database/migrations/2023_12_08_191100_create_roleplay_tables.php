@@ -61,11 +61,11 @@ return new class extends Migration
         });
 
         // Company Job Subscribers
-        Schema::create('company_job_subscribers', function(Blueprint $table) {
+        Schema::create('company_job_applicants', function(Blueprint $table) {
             $table->bigInteger('job_id')->unsigned()->index()->foreign()->references('id')->on('company_jobs');
             $table->bigInteger('user_id')->unsigned()->index()->foreign()->references('id')->on('users');
             $table->datetimes();
-            $table->enum('status', \App\Enums\CompanyJobSubscriberType::cases())->default(\App\Enums\CompanyJobSubscriberType::UNDER_REVIEW);
+            $table->enum('status', \App\Enums\CompanyJobApplicantType::cases())->default(\App\Enums\CompanyJobApplicantType::UNDER_REVIEW);
         });
 
         // Reviews
@@ -119,7 +119,7 @@ return new class extends Migration
         Schema::dropIfExists('company_roles');
         Schema::dropIfExists('company_employees');
         Schema::dropIfExists('company_jobs');
-        Schema::dropIfExists('company_job_subscriptions');
+        Schema::dropIfExists('company_job_applicants');
         Schema::dropIfExists('reviews');
         Schema::dropIfExists('transactions');
         Schema::dropIfExists('user_documents');

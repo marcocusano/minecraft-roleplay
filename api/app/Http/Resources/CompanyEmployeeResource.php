@@ -23,7 +23,7 @@ class CompanyEmployeeResource extends JsonResource {
         ];
         
         // Relations
-        if (in_array($request->route()->getName(), ['companies.employees.*'])) {
+        if ($request->routeIs(['companies.employees.*'])) {
             // Company Relation
             $resource['company'] = Company::find($this->company_id) ?: [];
             // CompanyRole Relation

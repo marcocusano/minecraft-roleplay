@@ -9,9 +9,9 @@ class CreateRequest extends FormRequest {
     public function rules() {
         return [
             'parent_id' => 'nullable|numeric|exists:companies,id;',
-            'owner_id' => 'nullable|unique|exists:users,id',
+            'owner_id' => 'nullable|unique:companies,owner_id|exists:users,id',
             'luckperms' => 'nullable|json',
-            'name' => 'required|unique|string|min:3|max:50',
+            'name' => 'required|unique:companies,name|string|min:3|max:50',
             'description' => 'nullable|string|max:255',
             'location' => 'nullable|json',
             'permissions' => 'nullable|json',
@@ -31,10 +31,10 @@ class CreateRequest extends FormRequest {
             "name.required" => "Il nome dell'Azienda è obbligatorio.",
             // Uniques
             "name.unique" => "Non possono esistere più Aziende con lo stesso nome.",
-            "owner_id.unique" => "Non è possibile attribuire più Aziende ad uno stesso giocatore",
+            "owner_id.unique" => "Non è possibile attribuire più Aziende ad uno stesso Cittadino",
             // Types
             "parent_id.numeric" => "L'Azienda padre deve essere un valore numerico ed esistere già come Azienda disponibile.",
-            "owner_id.numeric" => "Il Direttore di questa Azienda deve essere un Giocatore valido.",
+            "owner_id.numeric" => "Il Direttore di questa Azienda deve essere un Cittadino valido.",
             "is_public.boolean" => "Specifica un valore vero o falso, che indichi se è un'Azienda Pubblica o meno.",
             "is_police.boolean" => "Specifica un valore vero o falso, che indichi se è un'Azienda appartenente a forze dell'ordine",
             "is_hackerable.boolean" => "Specifica un valore vero o false, che indichi se è un'Azienda che può o meno essere Hackerata",
