@@ -3,22 +3,19 @@
 namespace App\Models;
 
 // Laravel
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 // Models
-use App\Models\Company;
 use App\Models\User;
 
 // Libraries
 use App\Http\Controllers\Entities;
-use App\Enums\EntityType;
+
+// Resources
 use App\Http\Resources\CompanyResource;
 use App\Http\Resources\UserResource;
 
 class Transaction extends Model {
-    
-    use HasFactory;
     
     /**
      * The attributes that are mass assignable.
@@ -64,13 +61,13 @@ class Transaction extends Model {
      */
     protected $appends = [];
 
-    public function getEntity(string $entityType, $entityId):UserResource|CompanyResource|array {
-        return Entities::get($entityType, $entityId);
-    }
-
     ///////////////
     // Relations //
     ///////////////
+
+    public function getEntity(string $entityType, $entityId):UserResource|CompanyResource|array {
+        return Entities::get($entityType, $entityId);
+    }
 
     public function receiver():UserResource|CompanyResource|array {
         return ($this->receiver_id) ? $this->getEntity($this->receiver_type, $this->receiver_id) : [];

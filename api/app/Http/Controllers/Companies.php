@@ -64,7 +64,7 @@ class Companies extends Controller {
 
     public function jobs($id) {
         $company = Company::findOrFail($id);
-        return CompanyJobResource::collection($company->jobs()->paginate(100));
+        return CompanyJobResource::collection($company->jobs()->paginate(env('APP_PAGINATE')));
     }
 
     public function owner($id) {

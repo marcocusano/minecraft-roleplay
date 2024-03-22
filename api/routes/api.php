@@ -3,6 +3,7 @@
 // Controllers
 use App\Http\Controllers\Companies;
 use App\Http\Controllers\Debug;
+use App\Http\Controllers\Reviews;
 use App\Http\Controllers\Transactions;
 
 // Laravel
@@ -84,22 +85,40 @@ Route::group(['prefix' => "v1"], function () {
                 
     });
 
+    /////////////
+    // Reviews //
+    /////////////
+
+    Route::prefix('/reviews')->name('reviews.')->controller(Reviews::class)->group(function() {
+
+        // A.C.R.U.D.
+        Route::GET('/', 'all')->name('all');
+        Route::POST('/', 'create')->name('create');
+        Route::GET('/{id}', 'read')->name('read');
+        Route::PATCH('/{id}', 'update')->name('update');
+
+        // Relations
+        Route::GET('/{id}/receiver', 'receiver')->name('receiver');
+        Route::GET('/{id}/sender', 'sender')->name('sender');
+
+    });
+
     //////////////////
     // Transactions //
     //////////////////
+
     Route::prefix('/transactions')->name('transactions.')->controller(Transactions::class)->group(function () {
 
         // A.C.R.U.D.
-        Route::GET('/', 'all'); // Retrieve all Transactions
-        Route::POST('/', 'create'); // Generate a new Transaction
-        Route::GET('/{id}', 'read'); // Get an existing Transaction
-        Route::PUT('/{id}', 'update'); // Update an existing Transaction
-        Route::DELETE("/{id}", 'delete'); // Delete an existing Transaction
+        Route::GET('/', 'all')->name('all'); // Retrieve all Transactions
+        Route::POST('/', 'create')->name('create'); // Generate a new Transaction
+        Route::GET('/{id}', 'read')->name('read'); // Get an existing Transaction
+        Route::PATCH('/{id}', 'update')->name('update'); // Update an existing Transaction
 
         // Relations
-        Route::GET("/{id}/receiver", 'receiver'); // Get Receiver Entity of an existing Transaction
-        Route::GET("/{id}/sender", 'sender'); // Get Sender Entity of an existing Transaction
-        Route::GET("/{id}/updater", 'updater'); // Get Updater Entity of an existing Transaction
+        Route::GET("/{id}/receiver", 'receiver')->name('receiver'); // Get Receiver Entity of an existing Transaction
+        Route::GET("/{id}/sender", 'sender')->name('sender'); // Get Sender Entity of an existing Transaction
+        Route::GET("/{id}/updater", 'updater')->name('updater'); // Get Updater Entity of an existing Transaction
 
     });
 

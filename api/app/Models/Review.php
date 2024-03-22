@@ -5,7 +5,14 @@ namespace App\Models;
 // Laravel
 use Illuminate\Database\Eloquent\Model;
 
-class CompanyRole extends Model {
+// Libraries
+use App\Http\Controllers\Entities;
+
+// Resources
+use App\Http\Resources\UserResource;
+use App\Http\Resources\CompanyResource;
+
+class Review extends Model {
     
     /**
      * The attributes that are mass assignable.
@@ -46,11 +53,21 @@ class CompanyRole extends Model {
      * @var array<int, string>
      */
     protected $appends = [];
-
+    
     ///////////////
     // Relations //
     ///////////////
 
-    
+    public function getEntity(string $entityType, $entityId):UserResource|CompanyResource|array {
+        return Entities::get($entityType, $entityId);
+    }
+
+    public function receiver():UserResource|CompanyResource|array {
+        return ($this->receiver_id) ? $this->getEntity($this->receiver_type, $this->receiver_id) : [];
+    }
+
+    public function sender():UserResource|CompanyResource|array {
+        return ($this->sender_id) ? $this->getEntity($this->sender_type, $this->sender_id) : [];
+    }
 
 }

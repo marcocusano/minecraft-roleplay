@@ -32,7 +32,7 @@ class CompanyJobApplicantsSeeder extends Seeder {
                 [
                     'user_id' => 9,
                     'job_id' => 2,
-                    'status' => CompanyJobApplicantType::DECLINED
+                    'status' => CompanyJobApplicantType::DENIED
                 ],
                 [
                     'user_id' => 10,
@@ -58,7 +58,7 @@ class CompanyJobApplicantsSeeder extends Seeder {
                 [
                     'user_id' => 9,
                     'job_id' => 3,
-                    'status' => CompanyJobApplicantType::DECLINED
+                    'status' => CompanyJobApplicantType::DENIED
                 ],
                 [
                     'user_id' => 10,

@@ -17,13 +17,21 @@ class DatabaseSeeder extends Seeder {
 
     public function run(): void {
 
+        // Users
         $this->call(UsersSeeder::class);
+        
+        // Companies
         $this->call(CompaniesSeeder::class);
         $this->call(CompanyRolesSeeder::class);
         $this->call(CompanyEmployeesSeeder::class);
         $this->call(CompanyJobsSeeder::class);
         $this->call(CompanyJobApplicantsSeeder::class);
+        
+        // Transactions
         $this->call(TransactionsSeeder::class);
+
+        // Reviews
+        $this->call(ReviewsSeeder::class);
 
         /*
             Write here your custom Database Seeder
