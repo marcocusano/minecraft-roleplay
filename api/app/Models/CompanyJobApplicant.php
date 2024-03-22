@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 
 
 class CompanyJobApplicant extends Model {
+
+    protected $primaryKey = null;
+    public $incrementing = false;
     
     /**
      * The attributes that are mass assignable.

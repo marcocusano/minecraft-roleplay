@@ -43,7 +43,7 @@ Route::group(['prefix' => "v1"], function () {
         Route::GET('/', 'all')->name('all'); // Get all available Companies
         Route::POST('/', 'create')->name('create');  // Create a brand new Company
         Route::GET('/{id}', 'read')->name('read'); // Get info of an exising Company
-        Route::PATCH('/{id}', 'update')->name('update'); // Update an existing Company
+        Route::PUT('/{id}', 'update')->name('update'); // Update an existing Company
         Route::DELETE("/{id}", 'delete')->name('delete'); // Delete an existing Company
 
         // Relations
@@ -55,7 +55,7 @@ Route::group(['prefix' => "v1"], function () {
             Route::GET("/", 'employees')->name('all'); // Retrieve all Company Employees
             Route::POST("/", 'hireEmployee')->name('create'); // Hire Employee
             Route::GET("/{userId}", 'getEmployee')->name('read'); // Get an existing User Employee
-            Route::PATCH("/{userId}", 'promoteEmployee')->name('update'); // Promote Employee
+            Route::PUT("/{userId}", 'promoteEmployee')->name('update'); // Promote Employee
             Route::DELETE("/{userId}", 'fireEmployee')->name('delete'); // Fire Employee
         });
 
@@ -64,8 +64,13 @@ Route::group(['prefix' => "v1"], function () {
             Route::GET("/", 'jobs')->name('all'); // Retrieve all Jobs by a Company
             Route::POST("/", 'createJob')->name('create'); // Create a new Company Job announcement
             Route::GET("/{jobId}", 'getJob')->name('read'); // Get an existing Company Job announcement
-            Route::PATCH("/{jobId}", 'updateJob')->name('update'); // Update an existing Company Job announcement
+            Route::PUT("/{jobId}", 'updateJob')->name('update'); // Update an existing Company Job announcement
             Route::DELETE("/{jobId}", 'deleteJob')->name('delete'); // Delete an existing Company Job announcement
+            /* Job Applicants */
+            Route::prefix("/{jobId}/applicants")->name('applicants.')->group(function() {
+                Route::GET("/", 'jobApplicants')->name('all'); // Retrieve all Company Job Applicants
+                Route::PATCH("/{userId}", 'updateJobApplicant')->name('update'); // Updated an existing Company Job Applicant
+            });
         });
 
         /* Roles */
@@ -73,7 +78,7 @@ Route::group(['prefix' => "v1"], function () {
             Route::GET("/", 'roles')->name('all'); // Retrieve all Roles by a Company
             Route::POST("/", 'createRole')->name('create'); // Create a new Company Role
             Route::GET("/{roleId}", 'getRole')->name('read'); // Get an existing Company Role
-            Route::PATCH('/{roleId}', 'updateRole')->name('update'); // Update an existing Company Role
+            Route::PUT('/{roleId}', 'updateRole')->name('update'); // Update an existing Company Role
             Route::DELETE("/{roleId}", 'deleteRole')->name('delete'); // Delete an existing Company Role
         });      
                 
@@ -88,7 +93,7 @@ Route::group(['prefix' => "v1"], function () {
         Route::GET('/', 'all'); // Retrieve all Transactions
         Route::POST('/', 'create'); // Generate a new Transaction
         Route::GET('/{id}', 'read'); // Get an existing Transaction
-        Route::PATCH('/{id}', 'update'); // Update an existing Transaction
+        Route::PUT('/{id}', 'update'); // Update an existing Transaction
         Route::DELETE("/{id}", 'delete'); // Delete an existing Transaction
 
         // Relations

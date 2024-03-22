@@ -151,7 +151,7 @@
 					"name": "Roles",
 					"item": [
 						{
-							"name": "All Roles",
+							"name": "All Company Roles",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -164,6 +164,133 @@
 										"companies",
 										"1",
 										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Company Role",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL}}/companies/1/roles/1",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"companies",
+										"1",
+										"roles",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Jobs",
+					"item": [
+						{
+							"name": "Applicants",
+							"item": [
+								{
+									"name": "Job Applicants",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BaseURL}}/companies/2/jobs/2/applicants",
+											"host": [
+												"{{BaseURL}}"
+											],
+											"path": [
+												"companies",
+												"2",
+												"jobs",
+												"2",
+												"applicants"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Job Applicant",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "status",
+													"value": "review",
+													"description": "required|in:accepted,denied,review",
+													"type": "text"
+												},
+												{
+													"key": "_method",
+													"value": "PATCH",
+													"description": "If you're going to use PATCH method directly, please use raw data in JSON format.",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{BaseURL}}/companies/2/jobs/2/applicants/7",
+											"host": [
+												"{{BaseURL}}"
+											],
+											"path": [
+												"companies",
+												"2",
+												"jobs",
+												"2",
+												"applicants",
+												"7"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "All Company Jobs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL}}/companies/2/jobs",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"companies",
+										"2",
+										"jobs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All Jobs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL}}/companies/jobs",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"companies",
+										"jobs"
 									]
 								}
 							},
@@ -255,7 +382,7 @@
 								{
 									"key": "owner_id",
 									"value": "",
-									"description": "nullable|unique|exists:users,id",
+									"description": "nullable|unique:companies,owner_id|exists:users,id",
 									"type": "text",
 									"disabled": true
 								},
@@ -269,14 +396,15 @@
 								{
 									"key": "name",
 									"value": "Postman Company",
-									"description": "required|unique|string|min:3|max:50",
+									"description": "required|unique:companies,name|string|min:3|max:50",
 									"type": "text"
 								},
 								{
 									"key": "description",
 									"value": "This company was generated using the Postman API.",
 									"description": "nullable|string|max:255",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "location",
@@ -364,21 +492,121 @@
 								"exec": [
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
 					"request": {
-						"method": "PATCH",
+						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"parent_id\": null,\r\n    \"owner_id\": 1,\r\n    \"luckperms\": null,\r\n    \"name\": \"CyberTek\",\r\n    \"description\": \"Digital provider and managament system Owner. The owner of this Company is just a Failure and a Scammer! But hey... the publish date was on June 2023 ❤️\",\r\n    \"location\": null,\r\n    \"icon\": null,\r\n    \"is_public\": 0,\r\n    \"is_police\": 0,\r\n    \"is_master\": 1,\r\n    \"balance\": 157457235.25\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "parent_id",
+									"value": "",
+									"description": "nullable|numeric|exists:companies,id;",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "owner_id",
+									"value": "",
+									"description": "nullable|unique|exists:users,id",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "luckperms",
+									"value": "",
+									"description": "nullable|json",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Minecredit",
+									"description": "required|unique|string|min:3|max:50",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This company was generated using the Postman API.",
+									"description": "nullable|string|max:255",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "",
+									"description": "nullable|json",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "permissions",
+									"value": "",
+									"description": "nullable|json",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "icon",
+									"value": "",
+									"description": "nullable|string|min:3|max:30",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "is_public",
+									"value": "",
+									"description": "nullable|boolean",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "is_police",
+									"value": "",
+									"description": "nullable|boolean",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "is_hackerable",
+									"value": "",
+									"description": "nullable|boolean",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "is_master",
+									"value": "",
+									"description": "nullable|boolean",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "balance",
+									"value": "",
+									"description": "numeric|max:999999999",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "update_at",
+									"value": "",
+									"description": "nullable|datetime",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"description": "If you're going to use PUT method directly, please use raw data in JSON format.",
+									"type": "text"
 								}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{BaseURL}}/companies/1",

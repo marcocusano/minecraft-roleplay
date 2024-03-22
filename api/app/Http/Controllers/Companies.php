@@ -9,14 +9,15 @@ use Illuminate\Routing\Controller;
 use App\Models\Company;
 use App\Models\CompanyEmployee;
 use App\Models\CompanyJob;
+use App\Models\CompanyJobApplicant;
 use App\Models\CompanyRole;
 // Resources
 use App\Http\Resources\UserResource;
 use App\Http\Resources\CompanyResource;
 use App\Http\Resources\CompanyEmployeeResource;
 use App\Http\Resources\CompanyJobResource;
+use App\Http\Resources\CompanyJobApplicantResource;
 use App\Http\Resources\CompanyRoleResource;
-
 
 class Companies extends Controller {
 
@@ -42,7 +43,6 @@ class Companies extends Controller {
     public function update($id, \App\Http\Requests\Companies\CreateRequest $request) {
         $company = Company::findOrFail($id);
         $data = $request->validated();
-        var_dump($data); die();
         $company->update($data);
         return new CompanyResource($company);
     }
@@ -64,7 +64,7 @@ class Companies extends Controller {
 
     public function jobs($id) {
         $company = Company::findOrFail($id);
-        return CompanyJobResource::collection($company->jobs);
+        return CompanyJobResource::collection($company->jobs()->paginate(100));
     }
 
     public function owner($id) {
@@ -123,6 +123,19 @@ class Companies extends Controller {
     public function allJobs() { return CompanyJobResource::collection(CompanyJob::all()); }
 
     public function getJob($id) { return New CompanyJobResource(CompanyJob::findOrFail($id)); }
+
+    public function jobApplicants($id, $jobId) {
+        $companyJob = CompanyJob::where('id', $jobId)->where('company_id', $id)->firstOrFail();
+        return CompanyJobApplicantResource::collection($companyJob->applicants);
+    }
+
+    public function updateJobApplicant($id, $jobId, $userId, \App\Http\Requests\Companies\Jobs\Applicants\UpdateRequest $request) {
+        $data = $request->validated();
+        CompanyJob::where('id', $jobId)->where('company_id', $id)->firstOrFail();
+        $jobApplicant = CompanyJobApplicant::where("job_id", $jobId)->where('user_id', $userId)->firstOrFail();
+        $jobApplicant->update($data);
+        return new CompanyJobApplicantResource($jobApplicant);
+    }
 
     ///////////
     // Roles //
