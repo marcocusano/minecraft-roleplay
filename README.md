@@ -63,6 +63,6 @@ I'm not going to talk about pre-made solutions but self-hosted solutions. So, if
 >> If you're a Developer and not a ChatGPTer, you can try to learn Java directly. Or maybe yes, try to ask ChatGPT how to...
 
 ## License in few words
-**Completely described [here]() (GNU AGPL 3.0).**
+**Completely described [here](?tab=AGPL-3.0-1-ov-file) (GNU AGPL 3.0).**
 The features available within this project, web app, Minecraft plugin, and others may differ from what is offered by platforms that adopt part or all of the logic present here.
 Feel free to use, re-use this project as you wish, also for commercial purposes, but including a credit of the original author, for remote usage too. If not, you're not allowed to use it.
