@@ -1,14 +1,39 @@
-import './assets/main.css'
+////////////////
+// Stylesheet //
+////////////////
+
+import './assets/css/tailwind.css'
+import './assets/css/style.css'
+import './assets/css/override.css'
+
+/////////
+// Vue //
+/////////
 
 import { createApp } from 'vue'
+
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
 
-const app = createApp(App)
+/////////////////
+// Application //
+/////////////////
 
-app.use(createPinia())
-app.use(router)
+// Init
+const app = createApp(App);
+const pinia = createPinia();
 
-app.mount('#app')
+// Mount
+app.use(router);
+app.use(pinia);
+app.mount('#app');
+
+//////////////////////////
+// Exportable utilities //
+//////////////////////////
+
+export {
+    
+}

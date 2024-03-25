@@ -1,0 +1,4 @@
+/*
+    Mineskin
+    https://mineskin.eu/
+*/

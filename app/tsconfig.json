@@ -1,11 +1,30 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
+    
+    "compilerOptions": {
+        "allowJs": true,
+        "baseUrl": "./",
+        "module": "ES2022",
+        "moduleResolution": "Bundler",
+        "noEmitOnError": false,
+        "noImplicitAny": false,
+        "noImplicitThis": false,
+        "paths": {
+            "@/*": [ "src/*" ],
+            "@sdk": [ "src/plugins/SDK"]
+        },
+        "skipLibCheck": true,
+        "strict": false,
+        "target": "ESNext",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "verbatimModuleSyntax": false,
     },
-    {
-      "path": "./tsconfig.app.json"
-    }
-  ]
+
+    "include": [
+        "env.d.ts",
+        "src/**/*",
+        "src/**/*.vue"
+    ]
+    
 }

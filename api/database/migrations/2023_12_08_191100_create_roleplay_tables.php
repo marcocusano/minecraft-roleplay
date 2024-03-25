@@ -16,11 +16,12 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->string('parent_id')->nullable();
             $table->bigInteger('owner_id')->unsigned()->unique()->nullable()->index()->foreign()->references('id')->on('users');
-            $table->string('name');
+            $table->string('slug', 50)->unique();
+            $table->string('name', 50);
             $table->string('description')->nullable();
             $table->json('location')->nullable();
-            $table->json('icon')->nullable();
-            $table->boolean('is_public')->default(false);
+            $table->string('icon')->nullable();
+            $table->boolean('is_government')->default(false);
             $table->boolean('is_police')->default(false);
             $table->boolean('is_hackerable')->default(true);
             $table->boolean('is_master')->default(false);

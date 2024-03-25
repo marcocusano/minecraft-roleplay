@@ -1,6 +1,23 @@
-# Ignore completely: intimidations by failed individuals
+#########################################################################
+# Author: Marco Cusano                                                  #
+# Website: https://www.marcocusano.dev                                  #
+# API Demo: https://api.roleplay.marcocusano.dev                        #
+# App Demo: https://roleplay.marcocusano.dev                            #
+#########################################################################
+# Ignore completely: intimidations by failed individuals and then...    #
+#########################################################################
+
+# Global
+/dist
+# API
 /api/node_modules
 /api/.vscode
+/api/.env
+/api/composer.lock
+/api/dist
+# APP
 /app/node_modules
+/app/.env
 /app/.vscode
-/dist
+/app/package-lock.json
+/app/dist
