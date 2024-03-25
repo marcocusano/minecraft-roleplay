@@ -10,7 +10,8 @@
         "noImplicitThis": false,
         "paths": {
             "@/*": [ "src/*" ],
-            "@sdk": [ "src/plugins/SDK"]
+            "@sdk": [ "src/plugins/SDK"],
+            "@minecraft": [ "src/plugins/minecraft"]
         },
         "skipLibCheck": true,
         "strict": false,

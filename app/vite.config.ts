@@ -13,6 +13,7 @@ export default defineConfig({
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url)),
             '@sdk': fileURLToPath(new URL('./src/plugins/SDK/index.ts', import.meta.url)),
+            '@minecraft': fileURLToPath(new URL('./src/plugins/Minecraft/index.ts', import.meta.url)),
         }
     }
 })

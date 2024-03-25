@@ -1,11 +1,11 @@
 /*
-    Mineskin
-    https://mineskin.eu/
+    MCHeads
+    https://mc-heads.net/
 */
 
-export class Mineskin {
+export class MCHeads {
 
-    private url:string = '//mineskin.eu';
+    private url:string = '//mc-heads.net';
 
     /**
      * Get a Player Avatar
@@ -15,7 +15,7 @@ export class Mineskin {
      * @returns Image URL String
      */
     public avatar(identifier:string, size:number|null = 150, helm:boolean = true):string {
-        let url = `${this.url}/${helm?'helm':'avatar'}/${identifier}`;
+        let url = `${this.url}/avatar/${identifier}`;
         if (size) {  url += `/${size}`; }
         if (!helm) { url += `/nohelm`; }
         return url;
@@ -27,16 +27,16 @@ export class Mineskin {
      * @returns Image URL String
      */
     public body(identifier:string):string {
-        return `${this.url}/armor/body/${identifier}`;
+        return `${this.url}/player/${identifier}`;
     }
 
     /**
-     * Get a Player chest Skin.
-     * @param identifier Minecraft UUID or Minecraft Nickname
+     * Get a default Minecraft Skin
+     * @param name 'MHF_Steve' or 'MHF_Alex' (Default: 'MHF_Steve')
      * @returns Image URL String
      */
-    public chest(identifier:string):string {
-        return `${this.url}/armor/bust/${identifier}`;
+    public defaults(name:'MHF_Steve'|'MHF_Alex' = 'MHF_Steve'):string {
+        return `${this.url}/player/${name}`;
     }
 
     /**
@@ -49,13 +49,14 @@ export class Mineskin {
     }
 
     /**
-     * Get an isometric Head of a Player, looking at right
+     * Get an isometric Head of a Player, looking to a specific direction
      * @param identifier Mineraft UUID or Minecraft Nickname
-     * @param helm True/False including Helm (Default: true)
+     * @param direction Player's looking at 'left' or 'right' (Default: 'right')
      * @returns Image URL String
      */
-    public isometricAvatar(identifier:string, helm:boolean = true):string {
-        let url = `${this.url}/${helm?'headhelm':'head'}/${identifier}`;
+    public isometricAvatar(identifier:string, direction:'left'|'right' = 'right'):string {
+        let url = `${this.url}/head/${identifier}`;
+        if (direction) { url += `/${direction}`; }
         return url;
     }
 
@@ -70,4 +71,4 @@ export class Mineskin {
 
 }
 
-export default new Mineskin();
+export default new MCHeads();
