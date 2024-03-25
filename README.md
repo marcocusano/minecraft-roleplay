@@ -1,7 +1,7 @@
 # Minecraft Roleplay Development Status
 
-- **Phase 1 (Current)** - Web Engine: REST API System based on Laravel;
-- **Phase 2** - Layout: All web application pages, based on Laravel seeding;
+- **Phase 1** - Web Engine: REST API System based on Laravel;
+- **Phase 2 (Current)** - Layout: All web application pages, based on Laravel seeding;
 - **Phase 3** - GodMode: A working web application with god powers! (Actions can be executed without login or permissions filter);
 - **Phase 4** - Web Release: The first working release of the web application;
 - **Phase 5** - Goto Minecraft: An alpha version of the Minecraft plugin;
