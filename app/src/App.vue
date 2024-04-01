@@ -18,7 +18,7 @@ export default {
 
     data() {
         return {
-            guest: UserStore().user.guest,
+            guest: UserStore().value.guest,
             routerName: this.$router.currentRoute.value.name
         }
     },

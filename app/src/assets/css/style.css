@@ -3,3 +3,17 @@ body,
 #app {
     height: 100% !important
 }
+
+.fade-opacity {
+    animation: fade-opacity .4s ease-in-out;
+}
+
+@keyframes fade-opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -1,41 +1,52 @@
 // Vue
 import { defineStore } from 'pinia'
 
-// Interfaces
-interface UserInterface {
-    user: {
-        guest:boolean,
-        id:number,
-        permissions:Array<any>
-    }
-}
+// Libraries
+import Moment from '@/plugins/Moment'
 
-// Data Default
-const userDefaults:UserInterface = {
-    user: {
-        guest: false,
-        id: null,
-        permissions: []
-    }
-}
+// Interfaces
+import { UserCacheInterface } from './interfaces/user';
+import { UserLogin } from '@/plugins/SDK/api/interfaces/Users';
+
+// Defaults
+import userDefaults, { demoUserDefaults } from './defaults/user';
+import useCacheStore from './cache';
 
 export const useUserStore = defineStore({
 
     id: 'user',
 
-    state():UserInterface {
+    state():UserCacheInterface|null {
+        const guestValue:UserCacheInterface = {
+            value:userDefaults,
+            expires_at: -1
+        };
         const storedValue = localStorage.getItem('user');
-        return { user: (storedValue ? JSON.parse(storedValue) : userDefaults.user) }; 
+        if (storedValue) {
+            const data:UserCacheInterface = JSON.parse(storedValue);
+            return (useCacheStore().isExpired(data.expires_at)) ? guestValue : data;
+        } else { return guestValue; }
     },
 
     actions: {
 
-        login() {
-
+        login():UserCacheInterface {
+            if (import.meta.env['VITE_APP_MODE'] === 'demo') {
+                const user:UserLogin = demoUserDefaults;
+                const data:UserCacheInterface = {
+                    value: user,
+                    expires_at: Moment().add(import.meta.env['VITE_CACHE_EXPIRATION_USER'], 'minutes').valueOf()
+                };
+                localStorage.setItem('user', JSON.stringify(data))
+                return data;
+            } else {
+                // Perform a real login
+            }
         },
 
-        logout() {
-
+        logout():null {
+            localStorage.removeItem('user');
+            return null;
         }
 
     },

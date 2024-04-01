@@ -1,5 +1,8 @@
 <script lang="ts">
 
+// Store
+import useUserStore from '@/stores/user'
+
 // Components
 import Button from '@/components/buttons/SubmitButton.vue'
 import Code from '@/components/typography/Code.vue'
@@ -32,7 +35,17 @@ export default {
         LoginCard,
         Text,
         ToggleDarkmode
+    },
+
+    methods: {
+
+        login() {
+            useUserStore().login();
+            this.$router.go();
+        }
+
     }
+
 }
 </script>
 
@@ -45,7 +58,7 @@ export default {
                 <div class="mx-auto">{{ app.name }}</div>
             </Link>
             <Form @submit="" class="mb-6">
-                <Button class="mt-5 w-[100%]"><FontAwesome type="fab" icon="discord"></FontAwesome> Discord Login</Button>
+                <Button class="mt-5 w-[100%]" @click="login"><FontAwesome type="fab" icon="discord"></FontAwesome> Discord Login</Button>
                 <Text size="sm" class="mt-3">Don’t have an account yet?
                     <Link href="/play">Join our Minecraft Server</Link> and type <Code>/discord</Code> to link your
                     <strong>Minecraft Account</strong> to your <strong>Discord Account</strong>.

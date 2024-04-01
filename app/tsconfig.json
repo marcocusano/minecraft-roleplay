@@ -11,7 +11,7 @@
         "paths": {
             "@/*": [ "src/*" ],
             "@sdk": [ "src/plugins/SDK"],
-            "@minecraft": [ "src/plugins/minecraft"]
+            "@minecraft": [ "src/plugins/Minecraft"]
         },
         "skipLibCheck": true,
         "strict": false,
