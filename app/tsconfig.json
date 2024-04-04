@@ -1,5 +1,4 @@
 {
-    
     "compilerOptions": {
         "allowJs": true,
         "baseUrl": "./",
@@ -11,7 +10,8 @@
         "paths": {
             "@/*": [ "src/*" ],
             "@sdk": [ "src/plugins/SDK"],
-            "@minecraft": [ "src/plugins/Minecraft"]
+            "@minecraft": [ "src/plugins/Minecraft"],
+            "@utilities/*": [ "src/plugins/Utilities/*"]
         },
         "skipLibCheck": true,
         "strict": false,

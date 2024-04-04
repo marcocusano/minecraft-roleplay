@@ -8,20 +8,22 @@ import { initFlowbite } from 'flowbite'
 // Components
 import Link from '@/components/typography/Link.vue';
 
-// Modules
+// Blocks
 import DashboardContent from '@/blocks/Dashboard/DashboardContent.vue';
 import DashboardMenu from '@/blocks/Dashboard/DashboardMenu.vue';
 import DashboardNavbar from '@/blocks/Dashboard/DashboardNavbar.vue';
+import StandardFooter from '@/blocks/Dashboard/StandardFooter.vue';
 
 export default {
     components: {
         // Components
         Link,
         RouterView,
-        // Modules
+        // Blocks
         DashboardContent,
         DashboardMenu,
-        DashboardNavbar
+        DashboardNavbar,
+        StandardFooter
     },
     mounted() {
         this.$nextTick(() => { initFlowbite(); });
@@ -38,5 +40,7 @@ export default {
         <DashboardMenu></DashboardMenu>
         <!-- Content -->
         <DashboardContent></DashboardContent>
+        <!-- Footer -->
+        <StandardFooter></StandardFooter>
     </div>
 </template>

@@ -1,0 +1,67 @@
+.markdown-renderer {
+
+    * {
+        margin-bottom: 10px;
+        background: transparent !important;
+    }
+
+    code {
+        color: white;
+        background: var(--dark-bg-darker) !important;
+        border-radius: 10px;
+        padding: 6px 10px;
+    }
+
+    h1, h2, h3 {
+       font-weight: bolder;
+       font-size: 24px
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h4, h5, h6 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    h5 { font-size: 16px; }
+
+    h6 { font-size: 14px; }
+
+    hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    ol,
+    ul,
+    menu {
+        list-style: initial;
+        margin: 30px;
+        padding: 5px;
+    }
+
+}
+
+.dark .markdown-renderer {
+    *:not(span) {
+        color: white;
+    }
+
+    hr {
+        background-color: var(--dark-borders);
+        border-color: var(--dark-borders);
+    }
+}
+
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+    color: #5081bb !important;
+}

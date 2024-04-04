@@ -11,6 +11,7 @@ export interface PingResponse {
         name:string
     },
     players: {
+        now?:number,
         online:number,
         max:number,
         sample:Array<any>
@@ -36,7 +37,7 @@ export interface UUIDResponse {
 
 export class MinecraftAPI {
     
-    private url:string = "//minecraft-api.com/api";
+    private url:string = import.meta.env['VITE_APP_CORS_URL'] + "https://minecraft-api.com/api";
     private ip:string = null;
     private port:string = null;
     private queryPort:string = null;
@@ -53,7 +54,7 @@ export class MinecraftAPI {
      */
     public async ping():Promise<PingResponse>|null {
         if (this.ip && this.port) {
-            return await axios.get(`/ping/${this.ip}/${this.port}/json`).then(response => { return JSON.parse(response.data); })
+            return await axios.get(`/ping/${this.ip}/${this.port}/json`).then(response => { return response.data; })
         } else { return null; }
     }
 
@@ -63,7 +64,7 @@ export class MinecraftAPI {
      * @returns PseudoResponse Interface
      */
     public async pseudo(uuid:string):Promise<PseudoResponse> {
-        return await axios.get(`/pseudo/${uuid}/json`).then(response => { return JSON.parse(response.data); });
+        return await axios.get(`/pseudo/${uuid}/json`).then(response => { return response.data; });
     }
 
     /**
@@ -72,7 +73,7 @@ export class MinecraftAPI {
      */
     public async query():Promise<any>|null {
         if (this.ip && this.queryPort) {
-            return await axios.get(`/ping/${this.ip}/${this.queryPort}/json`).then(response => { return JSON.parse(response.data); })
+            return await axios.get(`/ping/${this.ip}/${this.queryPort}/json`).then(response => { return response.data; })
         } else { return null; }
     }
 
@@ -82,7 +83,7 @@ export class MinecraftAPI {
      * @returns UUIDResponse Interface
      */
     public async uuid(pseudo:string):Promise<UUIDResponse> {
-        return await axios.get(`/uuid/${pseudo}/json`).then(response => { return JSON.parse(response.data); })
+        return await axios.get(`/uuid/${pseudo}/json`).then(response => { return response.data; })
     }
 
 }

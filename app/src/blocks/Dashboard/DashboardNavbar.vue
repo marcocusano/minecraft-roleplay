@@ -10,6 +10,7 @@ import DashboardNavbarApps from './DashboardNavbar/DashboardNavbarApps.vue'
 import DashboardNavbarDrawer from './DashboardNavbar/DashboardNavbarDrawer.vue'
 import DashboardNavbarLogo from './DashboardNavbar/DashboardNavbarLogo.vue'
 import DashboardNavbarNotifications from './DashboardNavbar/DashboardNavbarNotifications.vue'
+import DashboardNavbarPing from './DashboardNavbar/DashboardNavbarPing.vue'
 import DashboardNavbarSearch from './DashboardNavbar/DashboardNavbarSearch.vue'
 
 // Components
@@ -25,6 +26,7 @@ export default {
         DashboardNavbarDrawer,
         DashboardNavbarLogo,
         DashboardNavbarNotifications,
+        DashboardNavbarPing,
         DashboardNavbarSearch,
         // Components
         ToggleDarkmode
@@ -64,6 +66,8 @@ export default {
                 <!-- Notifications
                 <DashboardNavbarNotifications></DashboardNavbarNotifications>
                 -->
+                <!-- Server Ping -->
+                <DashboardNavbarPing></DashboardNavbarPing>
                 <!-- Darkmode Toggler -->
                 <ToggleDarkmode></ToggleDarkmode>
                 <!-- Administration Area -->

@@ -18,8 +18,8 @@ const router = createRouter({
                     path: 'banking',
                     name: 'account.banking',
                     components: {
-                        default: () => import('../views/citizens/CitizenDefaultView.vue'),
-                        content: () => import('../views/citizens/contents/CitizenBankingView.vue')
+                        default: () => import('../views/account/AccountDefaultView.vue'),
+                        content: () => import('../views/account/contents/AccountBankingView.vue')
                     },
                     meta: {
                         layout: 'account'
@@ -29,8 +29,8 @@ const router = createRouter({
                     path: 'cv',
                     name: 'account.curriculum',
                     components: {
-                        default: () => import('../views/citizens/CitizenDefaultView.vue'),
-                        content: () => import('../views/citizens/contents/CitizenCurriculumView.vue')
+                        default: () => import('../views/account/AccountDefaultView.vue'),
+                        content: () => import('../views/account/contents/AccountCurriculumView.vue')
                     },
                     meta: {
                         layout: 'account'
@@ -40,8 +40,8 @@ const router = createRouter({
                     path: 'profile',
                     name: 'account.profile',
                     components: {
-                        default: () => import('../views/citizens/CitizenDefaultView.vue'),
-                        content: () => import('../views/citizens/contents/CitizenProfileView.vue')
+                        default: () => import('../views/account/AccountDefaultView.vue'),
+                        content: () => import('../views/account/contents/AccountProfileView.vue')
                     },
                     meta: {
                         layout: 'account'
@@ -51,8 +51,8 @@ const router = createRouter({
                     path: 'subscriptions',
                     name: 'account.subscriptions',
                     components: {
-                        default: () => import('../views/citizens/CitizenDefaultView.vue'),
-                        content: () => import('../views/citizens/contents/CitizenSubscriptionsView.vue')
+                        default: () => import('../views/account/AccountDefaultView.vue'),
+                        content: () => import('../views/account/contents/AccountSubscriptionsView.vue')
                     },
                     meta: {
                         layout: 'account'
@@ -104,6 +104,17 @@ const router = createRouter({
             path: '/documentation',
             name: 'documentation',
             component: () => import('../views/documentation/DocumentationIndexView.vue')
+        },
+        // Privacy Policy
+        {
+            path: '/privacy',
+            name: 'privacy',
+            component: () => import('../views/PrivacyView.vue')
+        },
+        { // Terms and Conditions
+            path: '/terms',
+            name: 'terms',
+            component: () => import('../views/TermsView.vue')
         },
     ]
 })

@@ -1,31 +1,38 @@
 <script lang="ts">
-
 export default {
-
     props: {
         size: {
             type: String,
             required: false,
             default: null
         }
+    },
+    computed: {
+        getClass() {
+            const sizeClasses = {
+                base:'text-base',
+                xs: 'text-xs',
+                sm: 'text-sm',
+                lg: 'text-lg',
+                xl: 'text-xl',
+                '2xl': 'text-2xl',
+                '3xl': 'text-3xl',
+                '4xl': 'text-4xl',
+                '5xl': 'text-5xl',
+                '6xl': 'text-6xl',
+                '7xl': 'text-7xl',
+                '8xl': 'text-8xl',
+                '9xl': 'text-9xl'
+            };
+            // Se la dimensione esiste nell'oggetto delle classi, restituisci quella classe, altrimenti restituisci la classe di default 'text-base'
+            return sizeClasses[this.size] || 'text-base';
+        }
     }
-
 }
-
 </script>
 
 <template>
-    <p v-if="size === 'xs'" class="text-xs text-gray-900 dark:text-white"><slot></slot></p>
-    <p v-else-if="size === 'sm'" class="text-sm text-gray-900 dark:text-white"><slot></slot></p>
-    <p v-else-if="size === 'lg'" class="text-lg text-gray-900 dark:text-white"><slot></slot></p>
-    <p v-else-if="size === 'xl'" class="text-xl text-gray-900 dark:text-white"><slot></slot></p>
-    <p v-else-if="size === '2xl'" class="text-2xl text-gray-900 dark:text-white"><slot></slot></p>
-    <p v-else-if="size === '3xl'" class="text-3xl text-gray-900 dark:text-white"><slot></slot></p>
-    <p v-else-if="size === '4xl'" class="text-4xl text-gray-900 dark:text-white"><slot></slot></p>
-    <p v-else-if="size === '5xl'" class="text-5xl text-gray-900 dark:text-white"><slot></slot></p>
-    <p v-else-if="size === '6xl'" class="text-6xl text-gray-900 dark:text-white"><slot></slot></p>
-    <p v-else-if="size === '7xl'" class="text-gray-900 text-7xl dark:text-white"><slot></slot></p>
-    <p v-else-if="size === '8xl'" class="text-gray-900 text-8xl dark:text-white"><slot></slot></p>
-    <p v-else-if="size === '9xl'" class="text-gray-900 text-9xl dark:text-white"><slot></slot></p>
-    <p v-else class="text-base text-gray-900 dark:text-white"><slot></slot></p>
+    <p :class="getClass" class="text-gray-900 dark:text-white">
+        <slot></slot>
+    </p>
 </template>

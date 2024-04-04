@@ -1,0 +1,76 @@
+/* Root and Defines */
+
+:root {
+    --dark-bg: #1f2937;
+    --dark-bg-darker: #111827;
+    --dark-borders: #374151;
+    --dark-borders-light: #434e61;
+    --dark-text: #9ca3af;
+}
+
+
+/* Styling */
+
+html,
+body,
+#app {
+    height: 100% !important;
+    overflow: hidden;
+}
+
+#app {
+    overflow-y: auto;
+    > div {
+        overflow-y: auto
+    }
+}
+
+.dark {
+
+    .ql-toolbar,
+    .ql-toolbar *,
+    .ql-container,
+    .ql-container * {
+        border-color: var(--dark-borders) !important;
+        color: white;
+    }
+    
+    .ql-header:hover,
+    .ql-picker-label:hover,
+    .ql-picker-options,
+    .ql-formats button:hover {
+        background: var(--dark-borders) !important;
+    }
+    
+    .ql-picker-item:hover {
+        background: var(--dark-borders-light) !important;
+        color: white !important;
+    }
+    
+    .default-theme pre::before,
+    .default-theme pre code {
+        background-color: var(--dark-bg-darker) !important
+    }
+
+}
+
+
+/*
+           Animations
+    Write here your animations
+*/
+
+.fade-opacity {
+    animation: fade-opacity .4s ease-in-out;
+}
+
+@keyframes fade-opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+

@@ -6,13 +6,13 @@ import DefaultCard from '@/components/cards/DefaultCard.vue'
 export default {
 
     components: {
-        DefaultCard
+        DefaultCard,
     },
 
     data() {
         return {
-            username: 'Citizen'
-        };
+
+        }
     }
 
 }
@@ -20,7 +20,5 @@ export default {
 </script>
 
 <template>
-    <div class="w-3/5 p-4">
-        
-    </div>
+
 </template>
