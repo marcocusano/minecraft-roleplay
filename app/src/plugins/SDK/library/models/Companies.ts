@@ -9,6 +9,10 @@ import type { CompanyIndex, CompanyShow } from "../resources/Companies"
 // Class
 export class Companies extends Model {
 
+    //////////////
+    // Standard //
+    //////////////
+
     /**
      * Get all Companies
      * @returns // Response with Array of Company Interface objects in .data

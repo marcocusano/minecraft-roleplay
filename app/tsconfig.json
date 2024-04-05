@@ -4,12 +4,14 @@
         "baseUrl": "./",
         "module": "ES2022",
         "moduleResolution": "Bundler",
-        "noEmitOnError": false,
+        "noEmit": true,
+        "noEmitOnError": true,
         "noImplicitAny": false,
         "noImplicitThis": false,
         "paths": {
             "@/*": [ "src/*" ],
             "@sdk": [ "src/plugins/SDK"],
+            "@sdk/*": [ "src/plugins/SDK/*" ],
             "@minecraft": [ "src/plugins/Minecraft"],
             "@utilities/*": [ "src/plugins/Utilities/*"]
         },

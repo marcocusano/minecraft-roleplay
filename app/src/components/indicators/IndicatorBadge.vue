@@ -49,6 +49,6 @@ export default {
 <template>
     <span class="inline-flex items-center  text-xs font-medium px-2.5 py-0.5 rounded-full " :class="c.container">
         <span class="w-2 h-2 me-1 rounded-full" :class="c.pointer"></span>
-        <slot></slot>
+        <span class="ml-1 mb-1"><slot></slot></span>
     </span>
 </template>

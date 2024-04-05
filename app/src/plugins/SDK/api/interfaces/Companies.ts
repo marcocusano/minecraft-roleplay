@@ -53,3 +53,32 @@ export interface CompanyRole {
     company?:Company,
     employees?:Array<CompanyEmployee>
 }
+
+// Default
+
+const def:Company = {
+    id: null,
+    parent_id: null,
+    owner_id: null,
+    location_id: null,
+    slug: null,
+    name: null,
+    description: null,
+    location:null,
+    icon: null,
+    is_government: false,
+    is_police: false,
+    is_hackerable: false,
+    is_master: false,
+    permissions: null,
+    balance: 0,
+    created_at: null,
+    updated_at: null,
+    // Relations
+    employees: [],
+    owner: null,
+    parent: null,
+    roles: []
+}
+
+export default def;

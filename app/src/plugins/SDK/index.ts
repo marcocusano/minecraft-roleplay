@@ -35,7 +35,7 @@ export class SDK {
      * @param id Instance of Companies using whole CRUD methods
      * @returns Instance of Companies using Read or CRUD methods
      */
-    public companies(id?:number):Companies { return new Companies(this.getModelConfig('companies', id)); }
+    public companies(idOrSlug?:number|string):Companies { return new Companies(this.getModelConfig('companies', idOrSlug, (typeof idOrSlug === 'string' ? 'slug' : 'id'))); }
     
 }
 

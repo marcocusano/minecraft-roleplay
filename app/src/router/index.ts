@@ -96,7 +96,45 @@ const router = createRouter({
             path: '/companies',
             name: 'companies',
             children: [
-                { path: ':slug', name: 'companies.read', component: () => import('../views/CompanyView.vue') }
+                {
+                    path: ':slug',
+                    name: 'companies.read',
+                    children: [
+                        {
+                            path: '',
+                            name: 'companies.dashboard',
+                            components: {
+                                default: () => import('../views/companies/CompaniesDefaultView.vue'),
+                                content: () => import('../views/companies/contents/CompaniesDashboardView.vue')
+                            },
+                            meta: {
+                                layout: 'companies'
+                            }
+                        },
+                        {
+                            path: 'employees',
+                            name: 'companies.employees',
+                            components: {
+                                default: () => import('../views/companies/CompaniesDefaultView.vue'),
+                                content: () => import('../views/companies/contents/CompaniesEmployeesView.vue')
+                            },
+                            meta: {
+                                layout: 'companies'
+                            }
+                        },
+                        {
+                            path: 'transactions',
+                            name: 'companies.transactions',
+                            components: {
+                                default: () => import('../views/companies/CompaniesDefaultView.vue'),
+                                content: () => import('../views/companies/contents/CompaniesTransactionsView.vue')
+                            },
+                            meta: {
+                                layout: 'companies'
+                            }
+                        },                       
+                    ]
+                }
             ]
         },
         // Documentation
