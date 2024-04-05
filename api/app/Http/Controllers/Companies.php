@@ -40,6 +40,11 @@ class Companies extends Controller {
         return new CompanyResource($company);
     }
 
+    public function readBySlug($slug) {
+        $company = Company::where('slug', $slug)->firstOrFail();
+        return new CompanyResource($company);
+    }
+
     public function update($id, \App\Http\Requests\Companies\CreateRequest $request) {
         $company = Company::findOrFail($id);
         $data = $request->validated();

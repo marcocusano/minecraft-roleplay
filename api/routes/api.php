@@ -41,9 +41,10 @@ Route::group(['prefix' => "v1"], function () {
         Route::GET("/jobs", 'allJobs')->name('jobs.all'); // Retrieve all Jobs by any Company
 
         // A.C.R.U.D.
-        Route::GET('/', 'all')->name('all'); // Get all available Companies
+        Route::GET('/', 'all')->name('all'); // Get all existing Companies
         Route::POST('/', 'create')->name('create');  // Create a brand new Company
-        Route::GET('/{id}', 'read')->name('read'); // Get info of an exising Company
+        Route::GET("/{slug}", 'readBySlug')->name('readBySlug'); // Get an existing Company by Slug
+        Route::GET('/{id}', 'read')->name('read'); // Get an existing Company
         Route::PUT('/{id}', 'update')->name('update'); // Update an existing Company
         Route::DELETE("/{id}", 'delete')->name('delete'); // Delete an existing Company
 
