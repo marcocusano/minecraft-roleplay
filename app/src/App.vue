@@ -1,5 +1,7 @@
 <script lang="ts">
 
+import { defineComponent } from 'vue';
+
 // Store
 import UserStore from './stores/user';
 
@@ -8,7 +10,7 @@ import DashboardLayout from './layouts/DashboardLayout.vue';
 import LoginLayout from './layouts/LoginLayout.vue';
 import MainLayout from './layouts/MainLayout.vue';
 
-export default {
+export default defineComponent({
 
     components: {
         DashboardLayout,
@@ -31,7 +33,7 @@ export default {
         }
     }
 
-}
+});
 
 </script>
 

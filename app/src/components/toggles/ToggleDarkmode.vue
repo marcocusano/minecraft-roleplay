@@ -3,7 +3,9 @@
 // Store
 import ThemeStore from '@/stores/theme';
 
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     data() {
         return {
@@ -24,7 +26,7 @@ export default {
 
     mounted() { this.init(); },
 
-}
+});
 
 </script>
 

@@ -1,10 +1,11 @@
 <script lang="ts">
-
+// Libraries
 import { MdEditor as Editor, type ToolbarNames } from 'md-editor-v3';
 import 'md-editor-v3/lib/style.css';
 import useThemeStore from '@/stores/theme';
-
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     props: {
         modelValue: {
             type: String,
@@ -59,8 +60,7 @@ export default {
     watch: {
         modelValue(v) { this.val = v; }
     }
-}
-
+});
 
 </script>
 

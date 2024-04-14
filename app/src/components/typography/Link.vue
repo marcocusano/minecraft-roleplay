@@ -1,8 +1,9 @@
 <script lang="ts">
-
+// Components
 import { RouterLink } from 'vue-router';
-
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     props: {
         href: {
@@ -23,8 +24,7 @@ export default {
 
     emits: ['click']
 
-}
-
+});
 </script>
 
 <template>

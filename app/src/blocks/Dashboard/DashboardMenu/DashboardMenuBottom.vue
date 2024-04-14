@@ -16,7 +16,9 @@ import Tooltip from '@/components/typography/Tooltip.vue'
 // Modules
 import DashboardMenuBottomLanguage from './DashboardMenuBottom/DashboardMenuBottomLanguage.vue'
 
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     components: {
         // Icons
         BookOpenIcon,
@@ -42,7 +44,7 @@ export default {
         }
     },
 
-}
+});
 
 </script>
 

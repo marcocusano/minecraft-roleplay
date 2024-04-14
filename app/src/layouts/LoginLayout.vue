@@ -6,13 +6,14 @@ import { RouterView } from 'vue-router';
 // Components
 import LoginForm from '@/components/forms/LoginForm.vue';
 
-// Initializator
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     components: {
         LoginForm,
         RouterView
     }
-}
+});
 
 </script>
 

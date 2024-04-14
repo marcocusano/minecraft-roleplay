@@ -23,7 +23,8 @@ const markdown = markdownit({
 });
 
 // Export
-export default {
+import { defineComponent } from 'vue';
+export default defineComponent({
     props: {
         id: {
             type: String,
@@ -62,7 +63,7 @@ export default {
     mounted() {  this.render(); },
     watch: { data() { this.render(); } }
 
-}
+});
 
 </script>
 

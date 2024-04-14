@@ -1,12 +1,11 @@
 <script lang="ts">
 
-// Vue
-import { RouterView } from 'vue-router';
-// Flowbite
+// Libraries
 import { initFlowbite } from 'flowbite'
 
 // Components
 import Link from '@/components/typography/Link.vue';
+import { RouterView } from 'vue-router';
 
 // Blocks
 import DashboardContent from '@/blocks/Dashboard/DashboardContent.vue';
@@ -14,7 +13,9 @@ import DashboardMenu from '@/blocks/Dashboard/DashboardMenu.vue';
 import DashboardNavbar from '@/blocks/Dashboard/DashboardNavbar.vue';
 import StandardFooter from '@/blocks/Dashboard/StandardFooter.vue';
 
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     components: {
         // Components
         Link,
@@ -28,7 +29,7 @@ export default {
     mounted() {
         this.$nextTick(() => { initFlowbite(); });
     }
-}
+});
 
 </script>
 

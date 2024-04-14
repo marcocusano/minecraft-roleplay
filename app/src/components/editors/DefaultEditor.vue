@@ -5,8 +5,9 @@ import Quill from './Quill.vue'
 import Markdown from './Markdown.vue'
 import TinyMCE from './TinyMCE.vue'
 
-// Export
-export default {
+/// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     props: {
         id: {
             type: String,
@@ -34,7 +35,7 @@ export default {
         value(v:any) { this.$refs[this.id].value(v); }
     },
     emits: ['update:modelValue'],
-}
+});
 
 </script>
 

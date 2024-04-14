@@ -1,6 +1,7 @@
 <script lang="ts">
-
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     props: {
         modelValue: {
             type: String,
@@ -13,7 +14,7 @@ export default {
             apiKey: import.meta.env['VITE_EDITOR_TINYMCE']
         }
     }
-}
+});
 
 </script>
 

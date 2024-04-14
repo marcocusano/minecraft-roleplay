@@ -15,7 +15,9 @@ import Grid from '@/components/layouts/Grid.vue';
 import ImageSkeleton from '@/components/skeletons/ImageSkeleton.vue'
 import ReviewSummary from '@/blocks/Reviews/ReviewSummary.vue'
 
-export default {
+// Export
+import { defineComponent } from 'vue'
+export default defineComponent({
 
     components: {
         DefaultBlock,
@@ -32,7 +34,6 @@ export default {
             is: {
                 loadingAvatar: true
             },
-            engine: { skin: import.meta.env['VITE_MINECRAFT_SKIN_ENGINE'] },
             minecraft: new Minecraft,
             account: account,
             balance: {
@@ -47,7 +48,7 @@ export default {
 
     }
 
-}
+});
 
 </script>
 

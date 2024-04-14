@@ -1,6 +1,7 @@
 <script lang="ts">
-
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     props: {
         alignItems: {
             type: String,
@@ -8,7 +9,7 @@ export default {
             default: 'items-center'
         }
     },
-}
+});
 </script>
 
 <template>

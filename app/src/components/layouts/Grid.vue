@@ -1,6 +1,7 @@
 <script lang="ts">
-
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     props: {
         cols: {
@@ -20,8 +21,7 @@ export default {
         }
     }
 
-}
-
+});
 </script>
 
 <template>

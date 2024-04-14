@@ -122,7 +122,7 @@ export class Default {
     public async _show(key:string|number, params?:any) {
         const request:Request = {
             method: RequestMethod.GET,
-            endpoint: `/${this.endpoint}/${key}`,
+            endpoint: `${this.endpoint}/${key}`,
             params: params
         }
         return await this.execute(request);
@@ -198,7 +198,7 @@ export class Model extends Default {
         if (!this.exists) { return EmptyResponse; }
         const request:Request = {
             method: RequestMethod.GET,
-            endpoint: `/${this.getEndpoint()}/${this.getPrimaryValue()}`,
+            endpoint: `${this.getEndpoint()}/${this.getPrimaryValue()}`,
             params: params
         }
         return await this.execute(request);

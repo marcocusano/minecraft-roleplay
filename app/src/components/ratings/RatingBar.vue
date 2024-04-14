@@ -4,7 +4,8 @@
 import Flex from '@/components/layouts/Flex.vue'
 
 // Export
-export default {
+import { defineComponent } from 'vue';
+export default defineComponent({
     props: {
         color: {
             type: String,
@@ -36,7 +37,7 @@ export default {
         onClick() { this.$emit('click', this); }
     },
     emits: ['click']
-}
+});
 </script>
 
 

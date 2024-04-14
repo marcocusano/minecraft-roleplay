@@ -7,7 +7,9 @@ import { type MenuItem } from '@/data/modules/Menu'
 import FontAwesome from '@/components/icons/FontAwesome.vue';
 import Link from '@/components/typography/Link.vue';
 
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     props: {
         id: {
             type: String,
@@ -27,7 +29,7 @@ export default {
         FontAwesome,
         Link
     }
-}
+});
 
 </script>
 

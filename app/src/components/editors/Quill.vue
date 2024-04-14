@@ -1,9 +1,10 @@
 <script lang="ts">
-
+// Libraries
 import { QuillEditor } from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
-
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     props: {
         id: {
@@ -57,7 +58,7 @@ export default {
     watch: {
         modelValue(v) { this.val = v; }
     }
-}
+});
 
 </script>
 

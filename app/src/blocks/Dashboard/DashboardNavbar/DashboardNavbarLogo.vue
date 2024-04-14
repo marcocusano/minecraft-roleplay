@@ -1,8 +1,9 @@
 <script lang="ts">
-
+// Data
 import Application from '@/data/modules/Application';
-
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     data() {
         return {
@@ -10,7 +11,7 @@ export default {
         }
     },
 
-}
+});
 
 </script>
 

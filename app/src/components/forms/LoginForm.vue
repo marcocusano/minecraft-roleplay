@@ -9,14 +9,15 @@ import Code from '@/components/typography/Code.vue'
 import Copyright from '@/components/typography/Copyright.vue'
 import FontAwesome from '@/components/icons/FontAwesome.vue'
 import Form from '@/components/forms/DefaultForm.vue'
-import Headings from '@/components/typography/Headings.vue'
+import Headings from '@/components/typography/Heading.vue'
 import Link from '@/components/typography/Link.vue'
 import LoginCard from '@/components/cards/LoginCard.vue'
 import Text from '@/components/typography/Text.vue'
 import ToggleDarkmode from '@/components/toggles/ToggleDarkmode.vue'
 
-// Initializator
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     data() {
         return {
             app: {
@@ -46,7 +47,7 @@ export default {
 
     }
 
-}
+});
 </script>
 
 <template>

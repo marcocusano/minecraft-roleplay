@@ -7,7 +7,9 @@ import { MenuItem } from '@/data/modules/Menu';
 import DropdownToggler from '@/components/dropdowns/DropdownToggler.vue'
 import DropdownNavbarMenu from '@/components/menu/DropdownNavbarMenu.vue'
 
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     props: {
         items: {
@@ -30,7 +32,7 @@ export default {
             }
         }
     }
-}
+});
 
 </script>
 

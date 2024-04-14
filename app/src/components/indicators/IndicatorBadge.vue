@@ -1,5 +1,7 @@
 <script lang="ts">
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     props: {
         color: {
             type: String,
@@ -44,7 +46,7 @@ export default {
     watch: {
         color(v) { this.c = this.setClass(); }
     }
-}
+});
 </script>
 <template>
     <span class="inline-flex items-center  text-xs font-medium px-2.5 py-0.5 rounded-full " :class="c.container">

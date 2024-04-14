@@ -16,7 +16,9 @@ import DashboardNavbarSearch from './DashboardNavbar/DashboardNavbarSearch.vue'
 // Components
 import ToggleDarkmode from '@/components/toggles/ToggleDarkmode.vue'
 
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     components: {
         // Modules
@@ -34,11 +36,12 @@ export default {
 
     data() {
         return {
-            menu: MenuData
+            menu: MenuData,
+            pinger: import.meta.env['VITE_MINECRAFT_SERVER_IP']
         }
     }
 
-}
+});
 
 </script>
 
@@ -67,7 +70,7 @@ export default {
                 <DashboardNavbarNotifications></DashboardNavbarNotifications>
                 -->
                 <!-- Server Ping -->
-                <DashboardNavbarPing></DashboardNavbarPing>
+                <DashboardNavbarPing v-if="pinger"></DashboardNavbarPing>
                 <!-- Darkmode Toggler -->
                 <ToggleDarkmode></ToggleDarkmode>
                 <!-- Administration Area -->

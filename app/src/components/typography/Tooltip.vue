@@ -1,6 +1,7 @@
 <script lang="ts">
-
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     props: {
         id: {
             type: String,
@@ -12,7 +13,7 @@ export default {
             required: true
         }
     }
-}
+});
 
 </script>
 

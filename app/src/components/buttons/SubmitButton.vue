@@ -3,7 +3,9 @@
 // Components
 import DefaultButton from '@/components/buttons/DefaultButton.vue';
 
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     props: {
         color: {
             type: String,
@@ -20,7 +22,7 @@ export default {
         DefaultButton
     },
     emits: ['click']
-}
+});
 
 </script>
 

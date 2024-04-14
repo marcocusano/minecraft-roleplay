@@ -7,7 +7,8 @@ import Application from '@/data/modules/Application'
 import IndicatorBadge from '@/components/indicators/IndicatorBadge.vue'
 import Tooltip from '@/components/typography/Tooltip.vue'
 // Export
-export default {
+import { defineComponent } from 'vue';
+export default defineComponent({
     components: {
         IndicatorBadge,
         Tooltip
@@ -45,7 +46,7 @@ export default {
     mounted() {
         setInterval(() => { this.ping(); }, 60000);
     }
-}
+});
 
 </script>
 

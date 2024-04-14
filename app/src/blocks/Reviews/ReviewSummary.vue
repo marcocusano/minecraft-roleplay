@@ -1,4 +1,5 @@
 <script lang="ts">
+
 // Components
 import Flex from '@/components/layouts/Flex.vue';
 import Grid from '@/components/layouts/Grid.vue';
@@ -7,7 +8,8 @@ import RatingStars from '@/components/ratings/RatingStars.vue';
 import Text from '@/components/typography/Text.vue';
 
 // Export
-export default {
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     props: {
         justifyCenter: {
@@ -79,7 +81,7 @@ export default {
         }
     }
 
-}
+});
 </script>
 
 <template>

@@ -4,7 +4,8 @@
 import Flex from '../layouts/Flex.vue';
 
 // Export
-export default {
+import { defineComponent } from 'vue';
+export default defineComponent({
     props: {
         justifyCenter: {
             type: Boolean,
@@ -37,7 +38,7 @@ export default {
             empty: max - this.value
         }
     },   
-}
+});
 
 </script>
 

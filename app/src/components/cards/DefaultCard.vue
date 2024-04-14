@@ -1,6 +1,7 @@
 <script lang="ts">
-
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     props: {
         clickable: {
@@ -20,7 +21,7 @@ export default {
         }
     }
 
-}
+});
 
 </script>
 

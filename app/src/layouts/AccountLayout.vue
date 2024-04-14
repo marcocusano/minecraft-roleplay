@@ -8,7 +8,9 @@ import { RouterView } from 'vue-router'
 import Tabs from '@/components/tabs/DefaultTabs.vue'
 import Card from '@/components/cards/DefaultCard.vue';
 
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     components: {
         Card,
         Tabs
@@ -19,7 +21,7 @@ export default {
             menuItems: AccountMenu
         }
     }
-}
+});
 
 </script>
 
@@ -31,7 +33,7 @@ export default {
         <div class="lg:w-3/5 w-full p-4">
             <Card>
                 <Tabs :items="menuItems" class="mb-5"></Tabs>
-                <RouterView name="content"></RouterView>
+                <RouterView name="content" />
             </Card>
         </div>
     </div>

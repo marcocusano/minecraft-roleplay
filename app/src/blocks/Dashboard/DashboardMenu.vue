@@ -5,13 +5,15 @@ import DashboardMenuBottom from './DashboardMenu/DashboardMenuBottom.vue'
 import DashboardMenuCompanies from './DashboardMenu/DashboardMenuCompanies.vue'
 import DashboardMenuSearch from './DashboardMenu/DashboardMenuSearch.vue'
 
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     components: {
         DashboardMenuBottom,
         DashboardMenuCompanies,
         DashboardMenuSearch
     },
-}
+});
 
 </script>
 

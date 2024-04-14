@@ -1,6 +1,7 @@
 <script lang="ts">
-
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     props: {
         color: {
@@ -46,8 +47,7 @@ export default {
         type(v) { this.initButtonType(); }
     }
 
-}
-
+});
 
 </script>
 

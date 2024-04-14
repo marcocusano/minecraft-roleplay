@@ -1,5 +1,7 @@
 <script lang="ts">
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     props: {
         size: {
             type: String,
@@ -28,7 +30,7 @@ export default {
             return sizeClasses[this.size] || 'text-base';
         }
     }
-}
+});
 </script>
 
 <template>

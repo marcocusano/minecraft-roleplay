@@ -14,7 +14,9 @@ enum DashboardLayout {
 import AccountLayout from '@/layouts/AccountLayout.vue'
 import CompaniesLayout from '@/layouts/CompaniesLayout.vue'
 
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     components: {
         AccountLayout,
@@ -46,14 +48,14 @@ export default {
         }
     }
 
-}
+});
 
 </script>
 
 <template>
     <main class="p-4 md:ml-64 h-auto pt-20">
         <AccountLayout v-if="layout.current === layout.type.ACCOUNT"></AccountLayout>
-        <CompaniesLayout v-if="layout.current === layout.type.DASHBOARD"></CompaniesLayout>
+        <CompaniesLayout v-else-if="layout.current === layout.type.DASHBOARD"></CompaniesLayout>
         <RouterView v-else></RouterView>
     </main>
 </template>

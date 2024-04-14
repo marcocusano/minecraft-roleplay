@@ -1,8 +1,9 @@
 <script lang="ts">
-
+// Styling
 import '@/assets/vendors/fontawesome/css/all.min.css'
-
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     props: {
         icon: {
@@ -16,7 +17,7 @@ export default {
         }
     }
 
-}
+});
 
 </script>
 

@@ -6,7 +6,8 @@ import Editor from '@/components/editors/DefaultEditor.vue';
 import Flex from '@/components/layouts/Flex.vue';
 
 // Export
-export default {
+import { defineComponent } from 'vue'
+export default defineComponent({
 
     components: {
         Button,
@@ -34,7 +35,7 @@ export default {
 
     }
 
-}
+});
 
 </script>
 

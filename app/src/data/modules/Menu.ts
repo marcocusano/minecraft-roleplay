@@ -121,6 +121,27 @@ export const AppsMenu:Array<MenuItem> = [
     },
 ];
 
+export const CompaniesMenu:Array<MenuItem> = [
+    {
+        slug: 'dashboard',
+        label: 'Dashboard',
+        icon: { name: 'chart-line' },
+        link: { to: '' },
+    },
+    {
+        slug: 'employees',
+        label: 'Employees',
+        icon: { name: 'user-tie' },
+        link: { to: '/employees' },
+    },
+    {
+        slug: 'transactions',
+        label: 'Transactions',
+        icon: { name: 'cash-register' },
+        link: { to: '/transactions' },
+    },
+];
+
 export default {
     account: AccountMenu,
     admin: AdminMenu,

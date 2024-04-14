@@ -14,8 +14,9 @@ import { MenuItem } from '@/data/modules/Menu'
 // Components
 import DashboardAsideMenu from '@/components/menu/DashboardAsideMenu.vue'
 
-
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     data() {
         return {
@@ -66,7 +67,7 @@ export default {
             });
         }
     }
-}
+});
 
 </script>
 

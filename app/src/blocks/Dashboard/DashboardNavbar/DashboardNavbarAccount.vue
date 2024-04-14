@@ -13,7 +13,9 @@ import { MenuItem } from '@/data/modules/Menu';
 import Link from '@/components/typography/Link.vue';
 import FontAwesome from '@/components/icons/FontAwesome.vue';
 
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
 
     props: {
         items: {
@@ -35,7 +37,7 @@ export default {
         }
     }
 
-}
+});
 
 </script>
 

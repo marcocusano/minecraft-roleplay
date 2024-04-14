@@ -5,13 +5,15 @@ import FontAwesome from '@/components/icons/FontAwesome.vue'
 import Link from './Link.vue'
 import Text from './Text.vue'
 
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     components: {
         FontAwesome,
         Link,
         Text
     }
-}
+});
 
 </script>
 

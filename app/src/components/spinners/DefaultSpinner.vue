@@ -1,6 +1,7 @@
 <script lang="ts">
-
-export default {
+// Export
+import { defineComponent } from 'vue';
+export default defineComponent({
     props: {
         color: {
             type: String,
@@ -13,8 +14,7 @@ export default {
             default: 'w-8 h-8'
         }
     }
-}
-
+});
 </script>
 
 <template>

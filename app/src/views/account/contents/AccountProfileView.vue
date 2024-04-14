@@ -3,7 +3,9 @@
 // Components
 import DefaultCard from '@/components/cards/DefaultCard.vue'
 
-export default {
+// Export
+import { defineComponent } from 'vue'
+export default defineComponent({
 
     components: {
         DefaultCard,
@@ -15,7 +17,7 @@ export default {
         }
     }
 
-}
+});
 
 </script>
 

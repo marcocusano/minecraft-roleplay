@@ -7,7 +7,8 @@ import FontAwesome from '@/components/icons/FontAwesome.vue';
 import Link from '@/components/typography/Link.vue';
 import Text from '@/components/typography/Text.vue';
 // Export
-export default {
+import { defineComponent } from 'vue';
+export default defineComponent({
     components: {
         Copyright,
         FontAwesome,
@@ -19,7 +20,7 @@ export default {
             app: Application,
         }
     },
-}
+});
 </script>
 
 <template>
